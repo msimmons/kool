@@ -1,0 +1,1472 @@
+{
+  "user_input": {
+    "youngest_child_age_years": 1,
+    "weight_lbs": 180,
+    "unlinked_cash": 10000,
+    "number_of_children": 1,
+    "life_insurance_amount": 500000,
+    "is_smoker": true,
+    "housing_status": "own",
+    "height_inches": 65,
+    "has_shared_finances": true,
+    "has_life_insurance": true,
+    "has_children": true,
+    "gender": "male",
+    "financial_goal": "help_with_debt",
+    "employment_years": 2,
+    "emotion_finances_today": "thinking",
+    "earmarked_cash": 500,
+    "car_status": "no_car",
+    "annual_individual_income": 75000,
+    "annual_household_income": 75000
+  },
+  "tu": {
+    "vantage_3_score": null,
+    "total_monthly_payments_revolving_cards": null,
+    "total_balance_revolving_cards": null,
+    "total_balance_open_trades": 1000,
+    "tax_liens": 0,
+    "revolving_apr": null,
+    "likely_zero_percent_revolver": null,
+    "is_transactor": null,
+    "is_sloppy_behavior": false,
+    "is_revolver": null,
+    "fico_score": 800,
+    "derogatory_public_records": 0,
+    "delinquencies_2_years": 0,
+    "debt_accounts": 5,
+    "credit_inquiries_6_months": 0,
+    "credit_history": 240,
+    "bankruptcies_public": 0,
+    "average_debt_service": null,
+    "as_of": "2017-05-04T19:51:09.433Z",
+    "age": 47,
+    "address_zipcode": "02210",
+    "address_state": "MA"
+  },
+  "system": {
+    "locked_savings_lump_amount": 115.2978189374988,
+    "locked_savings_flow_amount": 29.236882761026706,
+    "locked_protection_flow_amount": 66.91666666666667,
+    "locked_debt_lump_amount": 0.35273743750092607,
+    "locked_debt_flow_amount": 0.22093815563988536,
+    "allocation_locked": true
+  },
+  "mx": {
+    "unknown": null,
+    "savings": {
+      "transactions": {
+        "sum": 60,
+        "min": 20,
+        "median": 20,
+        "mean": 20,
+        "max": 20,
+        "income": {
+          "sum": 60,
+          "min": 20,
+          "median": 20,
+          "mean": 20,
+          "max": 20,
+          "debit": null,
+          "daily": {
+            "temporal_context": {
+              "oldest_transaction_on": "2016-09-20",
+              "newest_transaction_on": "2016-11-20",
+              "months": 3,
+              "last_refresh_on": null,
+              "days": 62
+            },
+            "min": 0,
+            "mean": 0.9677,
+            "max": 20
+          },
+          "credit": {
+            "sum": 60,
+            "min": 20,
+            "median": 20,
+            "mean": 20,
+            "max": 20,
+            "daily": {
+              "temporal_context": {
+                "oldest_transaction_on": "2016-09-20",
+                "newest_transaction_on": "2016-11-20",
+                "months": 3,
+                "last_refresh_on": null,
+                "days": 62
+              },
+              "min": 0,
+              "mean": 0.9677,
+              "max": 20
+            },
+            "count": 3
+          },
+          "count": 3
+        },
+        "debit": null,
+        "daily": {
+          "temporal_context": {
+            "oldest_transaction_on": "2016-09-20",
+            "newest_transaction_on": "2016-11-20",
+            "months": 3,
+            "last_refresh_on": null,
+            "days": 62
+          },
+          "min": 0,
+          "mean": 0.9677,
+          "max": 20
+        },
+        "credit": {
+          "sum": 60,
+          "min": 20,
+          "median": 20,
+          "mean": 20,
+          "max": 20,
+          "daily": {
+            "temporal_context": {
+              "oldest_transaction_on": "2016-09-20",
+              "newest_transaction_on": "2016-11-20",
+              "months": 3,
+              "last_refresh_on": null,
+              "days": 62
+            },
+            "min": 0,
+            "mean": 0.9677,
+            "max": 20
+          },
+          "count": 3
+        },
+        "count": 3
+      },
+      "temporal_context": {
+        "oldest_transaction_on": "2016-09-20",
+        "newest_transaction_on": "2016-11-20",
+        "months": 3,
+        "last_refresh_on": null,
+        "days": 62
+      }
+    },
+    "property": null,
+    "prepaid": null,
+    "mortgage": null,
+    "loan": null,
+    "line_of_credit": null,
+    "investment": null,
+    "insurance": null,
+    "credit_card": {
+      "transactions": {
+        "sum": 0,
+        "min": -100,
+        "median": 20.83,
+        "mean": 0,
+        "max": 79.17,
+        "groceries": {
+          "sum": 237.51,
+          "min": 79.17,
+          "median": 79.17,
+          "mean": 79.17,
+          "max": 79.17,
+          "debit": {
+            "sum": 237.51,
+            "min": 79.17,
+            "median": 79.17,
+            "mean": 79.17,
+            "max": 79.17,
+            "daily": {
+              "temporal_context": {
+                "oldest_transaction_on": "2016-09-01",
+                "newest_transaction_on": "2016-11-07",
+                "months": 3,
+                "last_refresh_on": null,
+                "days": 68
+              },
+              "min": 0,
+              "mean": 3.4928,
+              "max": 79.17
+            },
+            "count": 3
+          },
+          "daily": {
+            "temporal_context": {
+              "oldest_transaction_on": "2016-09-01",
+              "newest_transaction_on": "2016-11-07",
+              "months": 3,
+              "last_refresh_on": null,
+              "days": 68
+            },
+            "min": 0,
+            "mean": 3.4928,
+            "max": 79.17
+          },
+          "credit": null,
+          "count": 3
+        },
+        "finance_charge": {
+          "sum": 62.49,
+          "min": 20.83,
+          "median": 20.83,
+          "mean": 20.83,
+          "max": 20.83,
+          "debit": {
+            "sum": 62.49,
+            "min": 20.83,
+            "median": 20.83,
+            "mean": 20.83,
+            "max": 20.83,
+            "daily": {
+              "temporal_context": {
+                "oldest_transaction_on": "2016-09-01",
+                "newest_transaction_on": "2016-11-07",
+                "months": 3,
+                "last_refresh_on": null,
+                "days": 68
+              },
+              "min": 0,
+              "mean": 0.919,
+              "max": 20.83
+            },
+            "count": 3
+          },
+          "daily": {
+            "temporal_context": {
+              "oldest_transaction_on": "2016-09-01",
+              "newest_transaction_on": "2016-11-07",
+              "months": 3,
+              "last_refresh_on": null,
+              "days": 68
+            },
+            "min": 0,
+            "mean": 0.919,
+            "max": 20.83
+          },
+          "credit": null,
+          "count": 3
+        },
+        "debit": {
+          "sum": 300,
+          "min": 20.83,
+          "median": 50,
+          "mean": 50,
+          "max": 79.17,
+          "daily": {
+            "temporal_context": {
+              "oldest_transaction_on": "2016-09-01",
+              "newest_transaction_on": "2016-11-07",
+              "months": 3,
+              "last_refresh_on": null,
+              "days": 68
+            },
+            "min": 0,
+            "mean": 4.4118,
+            "max": 79.17
+          },
+          "count": 6
+        },
+        "daily": {
+          "temporal_context": {
+            "oldest_transaction_on": "2016-09-01",
+            "newest_transaction_on": "2016-11-07",
+            "months": 3,
+            "last_refresh_on": null,
+            "days": 68
+          },
+          "min": -100,
+          "mean": 0,
+          "max": 79.17
+        },
+        "credit_card_payment": {
+          "sum": -300,
+          "min": -100,
+          "median": -100,
+          "mean": -100,
+          "max": -100,
+          "debit": null,
+          "daily": {
+            "temporal_context": {
+              "oldest_transaction_on": "2016-09-01",
+              "newest_transaction_on": "2016-11-07",
+              "months": 3,
+              "last_refresh_on": null,
+              "days": 68
+            },
+            "min": -100,
+            "mean": -4.4118,
+            "max": 0
+          },
+          "credit": {
+            "sum": -300,
+            "min": -100,
+            "median": -100,
+            "mean": -100,
+            "max": -100,
+            "daily": {
+              "temporal_context": {
+                "oldest_transaction_on": "2016-09-01",
+                "newest_transaction_on": "2016-11-07",
+                "months": 3,
+                "last_refresh_on": null,
+                "days": 68
+              },
+              "min": -100,
+              "mean": -4.4118,
+              "max": 0
+            },
+            "count": 3
+          },
+          "count": 3
+        },
+        "credit": {
+          "sum": -300,
+          "min": -100,
+          "median": -100,
+          "mean": -100,
+          "max": -100,
+          "daily": {
+            "temporal_context": {
+              "oldest_transaction_on": "2016-09-01",
+              "newest_transaction_on": "2016-11-07",
+              "months": 3,
+              "last_refresh_on": null,
+              "days": 68
+            },
+            "min": -100,
+            "mean": -4.4118,
+            "max": 0
+          },
+          "count": 3
+        },
+        "count": 9
+      },
+      "temporal_context": {
+        "oldest_transaction_on": "2016-09-01",
+        "newest_transaction_on": "2016-11-07",
+        "months": 3,
+        "last_refresh_on": null,
+        "days": 68
+      }
+    },
+    "checking": {
+      "transactions": {
+        "withdrawal": {
+          "sum": -17229,
+          "min": -5743,
+          "median": -5743,
+          "mean": -5743,
+          "max": -5743,
+          "debit": {
+            "sum": -17229,
+            "min": -5743,
+            "median": -5743,
+            "mean": -5743,
+            "max": -5743,
+            "daily": {
+              "temporal_context": {
+                "oldest_transaction_on": "2016-09-01",
+                "newest_transaction_on": "2016-11-15",
+                "months": 3,
+                "last_refresh_on": null,
+                "days": 76
+              },
+              "min": -5743,
+              "mean": -226.6974,
+              "max": 0
+            },
+            "count": 3
+          },
+          "daily": {
+            "temporal_context": {
+              "oldest_transaction_on": "2016-09-01",
+              "newest_transaction_on": "2016-11-15",
+              "months": 3,
+              "last_refresh_on": null,
+              "days": 76
+            },
+            "min": -5743,
+            "mean": -226.6974,
+            "max": 0
+          },
+          "credit": null,
+          "count": 3
+        },
+        "sum": 750,
+        "service_fee": {
+          "sum": -3,
+          "min": -1,
+          "median": -1,
+          "mean": -1,
+          "max": -1,
+          "debit": {
+            "sum": -3,
+            "min": -1,
+            "median": -1,
+            "mean": -1,
+            "max": -1,
+            "daily": {
+              "temporal_context": {
+                "oldest_transaction_on": "2016-09-01",
+                "newest_transaction_on": "2016-11-15",
+                "months": 3,
+                "last_refresh_on": null,
+                "days": 76
+              },
+              "min": -1,
+              "mean": -0.0395,
+              "max": 0
+            },
+            "count": 3
+          },
+          "daily": {
+            "temporal_context": {
+              "oldest_transaction_on": "2016-09-01",
+              "newest_transaction_on": "2016-11-15",
+              "months": 3,
+              "last_refresh_on": null,
+              "days": 76
+            },
+            "min": -1,
+            "mean": -0.0395,
+            "max": 0
+          },
+          "credit": null,
+          "count": 3
+        },
+        "paycheck": {
+          "sum": 18000,
+          "min": 6000,
+          "median": 6000,
+          "mean": 6000,
+          "max": 6000,
+          "debit": null,
+          "daily": {
+            "temporal_context": {
+              "oldest_transaction_on": "2016-09-01",
+              "newest_transaction_on": "2016-11-15",
+              "months": 3,
+              "last_refresh_on": null,
+              "days": 76
+            },
+            "min": 0,
+            "mean": 236.8421,
+            "max": 6000
+          },
+          "credit": {
+            "sum": 18000,
+            "min": 6000,
+            "median": 6000,
+            "mean": 6000,
+            "max": 6000,
+            "daily": {
+              "temporal_context": {
+                "oldest_transaction_on": "2016-09-01",
+                "newest_transaction_on": "2016-11-15",
+                "months": 3,
+                "last_refresh_on": null,
+                "days": 76
+              },
+              "min": 0,
+              "mean": 236.8421,
+              "max": 6000
+            },
+            "count": 3
+          },
+          "count": 3
+        },
+        "min": -5743,
+        "median": -1,
+        "mean": 27.7778,
+        "max": 6000,
+        "fees_charges": {
+          "sum": -3,
+          "min": -1,
+          "median": -1,
+          "mean": -1,
+          "max": -1,
+          "debit": {
+            "sum": -3,
+            "min": -1,
+            "median": -1,
+            "mean": -1,
+            "max": -1,
+            "daily": {
+              "temporal_context": {
+                "oldest_transaction_on": "2016-09-01",
+                "newest_transaction_on": "2016-11-15",
+                "months": 3,
+                "last_refresh_on": null,
+                "days": 76
+              },
+              "min": -1,
+              "mean": -0.0395,
+              "max": 0
+            },
+            "count": 3
+          },
+          "daily": {
+            "temporal_context": {
+              "oldest_transaction_on": "2016-09-01",
+              "newest_transaction_on": "2016-11-15",
+              "months": 3,
+              "last_refresh_on": null,
+              "days": 76
+            },
+            "min": -1,
+            "mean": -0.0395,
+            "max": 0
+          },
+          "credit": null,
+          "count": 3
+        },
+        "debit": {
+          "sum": -17250,
+          "min": -5743,
+          "median": -1,
+          "mean": -718.75,
+          "max": -1,
+          "daily": {
+            "temporal_context": {
+              "oldest_transaction_on": "2016-09-01",
+              "newest_transaction_on": "2016-11-15",
+              "months": 3,
+              "last_refresh_on": null,
+              "days": 76
+            },
+            "min": -5750,
+            "mean": -226.9737,
+            "max": 0
+          },
+          "count": 24
+        },
+        "daily": {
+          "temporal_context": {
+            "oldest_transaction_on": "2016-09-01",
+            "newest_transaction_on": "2016-11-15",
+            "months": 3,
+            "last_refresh_on": null,
+            "days": 76
+          },
+          "min": -5750,
+          "mean": 9.8684,
+          "max": 6000
+        },
+        "credit": {
+          "sum": 18000,
+          "min": 6000,
+          "median": 6000,
+          "mean": 6000,
+          "max": 6000,
+          "daily": {
+            "temporal_context": {
+              "oldest_transaction_on": "2016-09-01",
+              "newest_transaction_on": "2016-11-15",
+              "months": 3,
+              "last_refresh_on": null,
+              "days": 76
+            },
+            "min": 0,
+            "mean": 236.8421,
+            "max": 6000
+          },
+          "count": 3
+        },
+        "count": 27,
+        "banking_fee": {
+          "sum": -3,
+          "min": -1,
+          "median": -1,
+          "mean": -1,
+          "max": -1,
+          "debit": {
+            "sum": -3,
+            "min": -1,
+            "median": -1,
+            "mean": -1,
+            "max": -1,
+            "daily": {
+              "temporal_context": {
+                "oldest_transaction_on": "2016-09-01",
+                "newest_transaction_on": "2016-11-15",
+                "months": 3,
+                "last_refresh_on": null,
+                "days": 76
+              },
+              "min": -1,
+              "mean": -0.0395,
+              "max": 0
+            },
+            "count": 3
+          },
+          "daily": {
+            "temporal_context": {
+              "oldest_transaction_on": "2016-09-01",
+              "newest_transaction_on": "2016-11-15",
+              "months": 3,
+              "last_refresh_on": null,
+              "days": 76
+            },
+            "min": -1,
+            "mean": -0.0395,
+            "max": 0
+          },
+          "credit": null,
+          "count": 3
+        },
+        "atm_fee": {
+          "sum": -3,
+          "min": -1,
+          "median": -1,
+          "mean": -1,
+          "max": -1,
+          "debit": {
+            "sum": -3,
+            "min": -1,
+            "median": -1,
+            "mean": -1,
+            "max": -1,
+            "daily": {
+              "temporal_context": {
+                "oldest_transaction_on": "2016-09-01",
+                "newest_transaction_on": "2016-11-15",
+                "months": 3,
+                "last_refresh_on": null,
+                "days": 76
+              },
+              "min": -1,
+              "mean": -0.0395,
+              "max": 0
+            },
+            "count": 3
+          },
+          "daily": {
+            "temporal_context": {
+              "oldest_transaction_on": "2016-09-01",
+              "newest_transaction_on": "2016-11-15",
+              "months": 3,
+              "last_refresh_on": null,
+              "days": 76
+            },
+            "min": -1,
+            "mean": -0.0395,
+            "max": 0
+          },
+          "credit": null,
+          "count": 3
+        }
+      },
+      "temporal_context": {
+        "oldest_transaction_on": "2016-09-01",
+        "newest_transaction_on": "2016-11-15",
+        "months": 3,
+        "last_refresh_on": null,
+        "days": 76
+      }
+    },
+    "cash": null
+  },
+  "is_onboarded": true,
+  "id": "3532ff5c-754e-458a-b516-4332a3bc5cec",
+  "accounts": [
+    {
+      "type": "credit_card",
+      "tu": {
+        "history": [
+          {
+            "scheduled_monthly_payment": null,
+            "past_due": null,
+            "month_effective": "2016-11",
+            "month_available": true,
+            "high_credit": 1000,
+            "current_balance": 1000,
+            "credit_limit": 2500,
+            "actual_payment": null
+          },
+          {
+            "scheduled_monthly_payment": null,
+            "past_due": null,
+            "month_effective": "2016-10",
+            "month_available": true,
+            "high_credit": 1000,
+            "current_balance": 1000,
+            "credit_limit": 2500,
+            "actual_payment": null
+          },
+          {
+            "scheduled_monthly_payment": null,
+            "past_due": null,
+            "month_effective": "2016-09",
+            "month_available": true,
+            "high_credit": 1000,
+            "current_balance": 1000,
+            "credit_limit": 2500,
+            "actual_payment": null
+          }
+        ],
+        "last_payment": null,
+        "last_statement_balance": 1000,
+        "payment_profile_started_on": null,
+        "closed_on": null,
+        "balance": 950,
+        "summary": {
+          "scheduled_monthly_payment_amount": null,
+          "most_recent_payment_amount": null,
+          "effective_date": null
+        },
+        "is_transactor": null,
+        "is_open": true,
+        "is_new_account": false,
+        "is_credit_card": true,
+        "is_sloppy_behavior": false,
+        "opened_on": "2011-01-01",
+        "monthly_payment_type": null,
+        "monthly_payment": null,
+        "delinquencies_90_days": null,
+        "portfolio_type": "revolving",
+        "name": "CBNA",
+        "credit_limit": 2500,
+        "months_history": null,
+        "delinquencies_30_days": null,
+        "revolving_apr": null,
+        "last_paid_on": "2016-11-06",
+        "closed_indicator": null,
+        "type": "CC",
+        "responsibility": "individual",
+        "high_credit": null,
+        "delinquencies_60_days": null,
+        "id": "cc75fa54-7211-4247-b407-acc1a2972a29",
+        "last_statement_month": "2016-11",
+        "effective_on": "2011-01-01",
+        "likely_zero_percent_revolver": null,
+        "payment_profile": null,
+        "industry_code": "B",
+        "is_revolver": null,
+        "number": "X1110",
+        "source": "tu"
+      },
+      "mx": {
+        "type": "credit_card",
+        "transactions": {
+          "sum": 0,
+          "min": -100,
+          "median": 20.83,
+          "mean": 0,
+          "max": 79.17,
+          "groceries": {
+            "sum": 237.51,
+            "min": 79.17,
+            "median": 79.17,
+            "mean": 79.17,
+            "max": 79.17,
+            "debit": {
+              "sum": 237.51,
+              "min": 79.17,
+              "median": 79.17,
+              "mean": 79.17,
+              "max": 79.17,
+              "daily": {
+                "temporal_context": {
+                  "oldest_transaction_on": "2016-09-01",
+                  "newest_transaction_on": "2016-11-07",
+                  "months": 3,
+                  "last_refresh_on": null,
+                  "days": 68
+                },
+                "min": 0,
+                "mean": 3.4928,
+                "max": 79.17
+              },
+              "count": 3
+            },
+            "daily": {
+              "temporal_context": {
+                "oldest_transaction_on": "2016-09-01",
+                "newest_transaction_on": "2016-11-07",
+                "months": 3,
+                "last_refresh_on": null,
+                "days": 68
+              },
+              "min": 0,
+              "mean": 3.4928,
+              "max": 79.17
+            },
+            "credit": null,
+            "count": 3
+          },
+          "finance_charge": {
+            "sum": 62.49,
+            "min": 20.83,
+            "median": 20.83,
+            "mean": 20.83,
+            "max": 20.83,
+            "debit": {
+              "sum": 62.49,
+              "min": 20.83,
+              "median": 20.83,
+              "mean": 20.83,
+              "max": 20.83,
+              "daily": {
+                "temporal_context": {
+                  "oldest_transaction_on": "2016-09-01",
+                  "newest_transaction_on": "2016-11-07",
+                  "months": 3,
+                  "last_refresh_on": null,
+                  "days": 68
+                },
+                "min": 0,
+                "mean": 0.919,
+                "max": 20.83
+              },
+              "count": 3
+            },
+            "daily": {
+              "temporal_context": {
+                "oldest_transaction_on": "2016-09-01",
+                "newest_transaction_on": "2016-11-07",
+                "months": 3,
+                "last_refresh_on": null,
+                "days": 68
+              },
+              "min": 0,
+              "mean": 0.919,
+              "max": 20.83
+            },
+            "credit": null,
+            "count": 3
+          },
+          "debit": {
+            "sum": 300,
+            "min": 20.83,
+            "median": 50,
+            "mean": 50,
+            "max": 79.17,
+            "daily": {
+              "temporal_context": {
+                "oldest_transaction_on": "2016-09-01",
+                "newest_transaction_on": "2016-11-07",
+                "months": 3,
+                "last_refresh_on": null,
+                "days": 68
+              },
+              "min": 0,
+              "mean": 4.4118,
+              "max": 79.17
+            },
+            "count": 6
+          },
+          "daily": {
+            "temporal_context": {
+              "oldest_transaction_on": "2016-09-01",
+              "newest_transaction_on": "2016-11-07",
+              "months": 3,
+              "last_refresh_on": null,
+              "days": 68
+            },
+            "min": -100,
+            "mean": 0,
+            "max": 79.17
+          },
+          "credit_card_payment": {
+            "sum": -300,
+            "min": -100,
+            "median": -100,
+            "mean": -100,
+            "max": -100,
+            "debit": null,
+            "daily": {
+              "temporal_context": {
+                "oldest_transaction_on": "2016-09-01",
+                "newest_transaction_on": "2016-11-07",
+                "months": 3,
+                "last_refresh_on": null,
+                "days": 68
+              },
+              "min": -100,
+              "mean": -4.4118,
+              "max": 0
+            },
+            "credit": {
+              "sum": -300,
+              "min": -100,
+              "median": -100,
+              "mean": -100,
+              "max": -100,
+              "daily": {
+                "temporal_context": {
+                  "oldest_transaction_on": "2016-09-01",
+                  "newest_transaction_on": "2016-11-07",
+                  "months": 3,
+                  "last_refresh_on": null,
+                  "days": 68
+                },
+                "min": -100,
+                "mean": -4.4118,
+                "max": 0
+              },
+              "count": 3
+            },
+            "count": 3
+          },
+          "credit": {
+            "sum": -300,
+            "min": -100,
+            "median": -100,
+            "mean": -100,
+            "max": -100,
+            "daily": {
+              "temporal_context": {
+                "oldest_transaction_on": "2016-09-01",
+                "newest_transaction_on": "2016-11-07",
+                "months": 3,
+                "last_refresh_on": null,
+                "days": 68
+              },
+              "min": -100,
+              "mean": -4.4118,
+              "max": 0
+            },
+            "count": 3
+          },
+          "count": 9
+        },
+        "temporal_context": {
+          "oldest_transaction_on": "2016-09-01",
+          "newest_transaction_on": "2016-11-07",
+          "months": 3,
+          "last_refresh_on": null,
+          "days": 68
+        },
+        "source": "mx",
+        "signal_apr": 0.329975549,
+        "reported_minimum_payment": 21,
+        "reported_apr": 0.25,
+        "number": "X1110",
+        "member_id": "finance12-fff0c967-69ba-4e2d-aa33-cc7490c1491d",
+        "likely_revolver": true,
+        "is_new_account": false,
+        "is_closed": false,
+        "institution": "Cinch Financial V2",
+        "id": "e20d4c6e-1806-4d98-a6b7-a5e70d744991",
+        "has_spend": true,
+        "has_fees": false,
+        "estimated_minimum_payment": 43.201091187908,
+        "effective_apr": 0.329975549,
+        "daily_balance": {
+          "temporal_context": {
+            "oldest_transaction_on": "2016-09-01",
+            "newest_transaction_on": "2016-11-07",
+            "months": 3,
+            "last_refresh_on": null,
+            "days": 68
+          },
+          "min": 979.17,
+          "mean": 1016.545,
+          "max": 1079.17
+        },
+        "credit_utilization": {
+          "ending": 0.391668,
+          "daily": {
+            "temporal_context": {
+              "oldest_transaction_on": "2016-09-01",
+              "newest_transaction_on": "2016-11-07",
+              "months": 3,
+              "last_refresh_on": null,
+              "days": 68
+            },
+            "min": 0.391668,
+            "mean": 0.4066,
+            "max": 0.431668
+          },
+          "beginning": 0.4
+        },
+        "credit_limit": 2500,
+        "beginning_balance": 1000,
+        "balance": 1000,
+        "available_credit_limit": 1500,
+        "authentication_status": "complete",
+        "account_site_id": "AVtDlmHY-4b3XlBp3Eb3"
+      },
+      "id": "53aef05d-b9e7-4e99-a56e-c2aec76551ea"
+    },
+    {
+      "type": "checking",
+      "mx": {
+        "type": "checking",
+        "transactions": {
+          "withdrawal": {
+            "sum": -17229,
+            "min": -5743,
+            "median": -5743,
+            "mean": -5743,
+            "max": -5743,
+            "debit": {
+              "sum": -17229,
+              "min": -5743,
+              "median": -5743,
+              "mean": -5743,
+              "max": -5743,
+              "daily": {
+                "temporal_context": {
+                  "oldest_transaction_on": "2016-09-01",
+                  "newest_transaction_on": "2016-11-15",
+                  "months": 3,
+                  "last_refresh_on": null,
+                  "days": 76
+                },
+                "min": -5743,
+                "mean": -226.6974,
+                "max": 0
+              },
+              "count": 3
+            },
+            "daily": {
+              "temporal_context": {
+                "oldest_transaction_on": "2016-09-01",
+                "newest_transaction_on": "2016-11-15",
+                "months": 3,
+                "last_refresh_on": null,
+                "days": 76
+              },
+              "min": -5743,
+              "mean": -226.6974,
+              "max": 0
+            },
+            "credit": null,
+            "count": 3
+          },
+          "sum": 750,
+          "service_fee": {
+            "sum": -3,
+            "min": -1,
+            "median": -1,
+            "mean": -1,
+            "max": -1,
+            "debit": {
+              "sum": -3,
+              "min": -1,
+              "median": -1,
+              "mean": -1,
+              "max": -1,
+              "daily": {
+                "temporal_context": {
+                  "oldest_transaction_on": "2016-09-01",
+                  "newest_transaction_on": "2016-11-15",
+                  "months": 3,
+                  "last_refresh_on": null,
+                  "days": 76
+                },
+                "min": -1,
+                "mean": -0.0395,
+                "max": 0
+              },
+              "count": 3
+            },
+            "daily": {
+              "temporal_context": {
+                "oldest_transaction_on": "2016-09-01",
+                "newest_transaction_on": "2016-11-15",
+                "months": 3,
+                "last_refresh_on": null,
+                "days": 76
+              },
+              "min": -1,
+              "mean": -0.0395,
+              "max": 0
+            },
+            "credit": null,
+            "count": 3
+          },
+          "paycheck": {
+            "sum": 18000,
+            "min": 6000,
+            "median": 6000,
+            "mean": 6000,
+            "max": 6000,
+            "debit": null,
+            "daily": {
+              "temporal_context": {
+                "oldest_transaction_on": "2016-09-01",
+                "newest_transaction_on": "2016-11-15",
+                "months": 3,
+                "last_refresh_on": null,
+                "days": 76
+              },
+              "min": 0,
+              "mean": 236.8421,
+              "max": 6000
+            },
+            "credit": {
+              "sum": 18000,
+              "min": 6000,
+              "median": 6000,
+              "mean": 6000,
+              "max": 6000,
+              "daily": {
+                "temporal_context": {
+                  "oldest_transaction_on": "2016-09-01",
+                  "newest_transaction_on": "2016-11-15",
+                  "months": 3,
+                  "last_refresh_on": null,
+                  "days": 76
+                },
+                "min": 0,
+                "mean": 236.8421,
+                "max": 6000
+              },
+              "count": 3
+            },
+            "count": 3
+          },
+          "min": -5743,
+          "median": -1,
+          "mean": 27.7778,
+          "max": 6000,
+          "fees_charges": {
+            "sum": -3,
+            "min": -1,
+            "median": -1,
+            "mean": -1,
+            "max": -1,
+            "debit": {
+              "sum": -3,
+              "min": -1,
+              "median": -1,
+              "mean": -1,
+              "max": -1,
+              "daily": {
+                "temporal_context": {
+                  "oldest_transaction_on": "2016-09-01",
+                  "newest_transaction_on": "2016-11-15",
+                  "months": 3,
+                  "last_refresh_on": null,
+                  "days": 76
+                },
+                "min": -1,
+                "mean": -0.0395,
+                "max": 0
+              },
+              "count": 3
+            },
+            "daily": {
+              "temporal_context": {
+                "oldest_transaction_on": "2016-09-01",
+                "newest_transaction_on": "2016-11-15",
+                "months": 3,
+                "last_refresh_on": null,
+                "days": 76
+              },
+              "min": -1,
+              "mean": -0.0395,
+              "max": 0
+            },
+            "credit": null,
+            "count": 3
+          },
+          "debit": {
+            "sum": -17250,
+            "min": -5743,
+            "median": -1,
+            "mean": -718.75,
+            "max": -1,
+            "daily": {
+              "temporal_context": {
+                "oldest_transaction_on": "2016-09-01",
+                "newest_transaction_on": "2016-11-15",
+                "months": 3,
+                "last_refresh_on": null,
+                "days": 76
+              },
+              "min": -5750,
+              "mean": -226.9737,
+              "max": 0
+            },
+            "count": 24
+          },
+          "daily": {
+            "temporal_context": {
+              "oldest_transaction_on": "2016-09-01",
+              "newest_transaction_on": "2016-11-15",
+              "months": 3,
+              "last_refresh_on": null,
+              "days": 76
+            },
+            "min": -5750,
+            "mean": 9.8684,
+            "max": 6000
+          },
+          "credit": {
+            "sum": 18000,
+            "min": 6000,
+            "median": 6000,
+            "mean": 6000,
+            "max": 6000,
+            "daily": {
+              "temporal_context": {
+                "oldest_transaction_on": "2016-09-01",
+                "newest_transaction_on": "2016-11-15",
+                "months": 3,
+                "last_refresh_on": null,
+                "days": 76
+              },
+              "min": 0,
+              "mean": 236.8421,
+              "max": 6000
+            },
+            "count": 3
+          },
+          "count": 27,
+          "banking_fee": {
+            "sum": -3,
+            "min": -1,
+            "median": -1,
+            "mean": -1,
+            "max": -1,
+            "debit": {
+              "sum": -3,
+              "min": -1,
+              "median": -1,
+              "mean": -1,
+              "max": -1,
+              "daily": {
+                "temporal_context": {
+                  "oldest_transaction_on": "2016-09-01",
+                  "newest_transaction_on": "2016-11-15",
+                  "months": 3,
+                  "last_refresh_on": null,
+                  "days": 76
+                },
+                "min": -1,
+                "mean": -0.0395,
+                "max": 0
+              },
+              "count": 3
+            },
+            "daily": {
+              "temporal_context": {
+                "oldest_transaction_on": "2016-09-01",
+                "newest_transaction_on": "2016-11-15",
+                "months": 3,
+                "last_refresh_on": null,
+                "days": 76
+              },
+              "min": -1,
+              "mean": -0.0395,
+              "max": 0
+            },
+            "credit": null,
+            "count": 3
+          },
+          "atm_fee": {
+            "sum": -3,
+            "min": -1,
+            "median": -1,
+            "mean": -1,
+            "max": -1,
+            "debit": {
+              "sum": -3,
+              "min": -1,
+              "median": -1,
+              "mean": -1,
+              "max": -1,
+              "daily": {
+                "temporal_context": {
+                  "oldest_transaction_on": "2016-09-01",
+                  "newest_transaction_on": "2016-11-15",
+                  "months": 3,
+                  "last_refresh_on": null,
+                  "days": 76
+                },
+                "min": -1,
+                "mean": -0.0395,
+                "max": 0
+              },
+              "count": 3
+            },
+            "daily": {
+              "temporal_context": {
+                "oldest_transaction_on": "2016-09-01",
+                "newest_transaction_on": "2016-11-15",
+                "months": 3,
+                "last_refresh_on": null,
+                "days": 76
+              },
+              "min": -1,
+              "mean": -0.0395,
+              "max": 0
+            },
+            "credit": null,
+            "count": 3
+          }
+        },
+        "temporal_context": {
+          "oldest_transaction_on": "2016-09-01",
+          "newest_transaction_on": "2016-11-15",
+          "months": 3,
+          "last_refresh_on": null,
+          "days": 76
+        },
+        "source": "mx",
+        "signal_apr": null,
+        "reported_minimum_payment": null,
+        "reported_apr": null,
+        "number": "X2220",
+        "member_id": "finance12-fff0c967-69ba-4e2d-aa33-cc7490c1491d",
+        "likely_revolver": null,
+        "is_new_account": false,
+        "is_closed": false,
+        "institution": "Cinch Financial V2",
+        "id": "87330542-4285-4e8f-bea1-1f740c02f039",
+        "has_spend": true,
+        "has_fees": true,
+        "estimated_minimum_payment": null,
+        "effective_apr": null,
+        "daily_balance": {
+          "temporal_context": {
+            "oldest_transaction_on": "2016-09-01",
+            "newest_transaction_on": "2016-11-15",
+            "months": 3,
+            "last_refresh_on": null,
+            "days": 76
+          },
+          "min": 0,
+          "mean": 3618.4211,
+          "max": 6500
+        },
+        "credit_utilization": null,
+        "credit_limit": null,
+        "beginning_balance": 0,
+        "balance": 750,
+        "available_credit_limit": null,
+        "authentication_status": "complete",
+        "account_site_id": "AVtDlmHY-4b3XlBp3Eb3"
+      },
+      "id": "8c90fc75-6fb0-40cc-85fb-ce2d02045726"
+    },
+    {
+      "type": "savings",
+      "mx": {
+        "type": "savings",
+        "transactions": {
+          "sum": 60,
+          "min": 20,
+          "median": 20,
+          "mean": 20,
+          "max": 20,
+          "income": {
+            "sum": 60,
+            "min": 20,
+            "median": 20,
+            "mean": 20,
+            "max": 20,
+            "debit": null,
+            "daily": {
+              "temporal_context": {
+                "oldest_transaction_on": "2016-09-20",
+                "newest_transaction_on": "2016-11-20",
+                "months": 3,
+                "last_refresh_on": null,
+                "days": 62
+              },
+              "min": 0,
+              "mean": 0.9677,
+              "max": 20
+            },
+            "credit": {
+              "sum": 60,
+              "min": 20,
+              "median": 20,
+              "mean": 20,
+              "max": 20,
+              "daily": {
+                "temporal_context": {
+                  "oldest_transaction_on": "2016-09-20",
+                  "newest_transaction_on": "2016-11-20",
+                  "months": 3,
+                  "last_refresh_on": null,
+                  "days": 62
+                },
+                "min": 0,
+                "mean": 0.9677,
+                "max": 20
+              },
+              "count": 3
+            },
+            "count": 3
+          },
+          "debit": null,
+          "daily": {
+            "temporal_context": {
+              "oldest_transaction_on": "2016-09-20",
+              "newest_transaction_on": "2016-11-20",
+              "months": 3,
+              "last_refresh_on": null,
+              "days": 62
+            },
+            "min": 0,
+            "mean": 0.9677,
+            "max": 20
+          },
+          "credit": {
+            "sum": 60,
+            "min": 20,
+            "median": 20,
+            "mean": 20,
+            "max": 20,
+            "daily": {
+              "temporal_context": {
+                "oldest_transaction_on": "2016-09-20",
+                "newest_transaction_on": "2016-11-20",
+                "months": 3,
+                "last_refresh_on": null,
+                "days": 62
+              },
+              "min": 0,
+              "mean": 0.9677,
+              "max": 20
+            },
+            "count": 3
+          },
+          "count": 3
+        },
+        "temporal_context": {
+          "oldest_transaction_on": "2016-09-20",
+          "newest_transaction_on": "2016-11-20",
+          "months": 3,
+          "last_refresh_on": null,
+          "days": 62
+        },
+        "source": "mx",
+        "signal_apr": null,
+        "reported_minimum_payment": null,
+        "reported_apr": null,
+        "number": "X3330",
+        "member_id": "finance12-fff0c967-69ba-4e2d-aa33-cc7490c1491d",
+        "likely_revolver": null,
+        "is_new_account": false,
+        "is_closed": false,
+        "institution": "Cinch Financial V2",
+        "id": "3d10c170-5f03-4a2d-bb90-14607f061d9b",
+        "has_spend": false,
+        "has_fees": false,
+        "estimated_minimum_payment": null,
+        "effective_apr": null,
+        "daily_balance": {
+          "temporal_context": {
+            "oldest_transaction_on": "2016-09-20",
+            "newest_transaction_on": "2016-11-20",
+            "months": 3,
+            "last_refresh_on": null,
+            "days": 62
+          },
+          "min": 240,
+          "mean": 269.6774,
+          "max": 280
+        },
+        "credit_utilization": null,
+        "credit_limit": null,
+        "beginning_balance": 240,
+        "balance": 300,
+        "available_credit_limit": null,
+        "authentication_status": "complete",
+        "account_site_id": "AVtDlmHY-4b3XlBp3Eb3"
+      },
+      "id": "2cb39a36-9ac3-4bab-8116-d2e2975a2a31"
+    }
+  ]
+}
