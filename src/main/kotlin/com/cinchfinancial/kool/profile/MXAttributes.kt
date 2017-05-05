@@ -12,11 +12,11 @@ class MXAttributes(properties: Map<String, Any?>) : BaseAttributes(properties) {
     }
 
     class TemporalContext(properties: Map<String, Any?>) : BaseAttributes(properties) {
-        val last_refresh_on: String? by scalarValue(properties)
-        val newest_transaction_on: String? by scalarValue(properties)
-        val oldest_transaction_on: String? by scalarValue(properties)
-        val months: Integer? by scalarValue(properties)
-        val days: Integer? by scalarValue(properties)
+        val last_refresh_on: String by scalarValue(properties)
+        val newest_transaction_on: String by scalarValue(properties)
+        val oldest_transaction_on: String by scalarValue(properties)
+        val months: Int by scalarValue(properties)
+        val days: Int by scalarValue(properties)
 
     }
 }

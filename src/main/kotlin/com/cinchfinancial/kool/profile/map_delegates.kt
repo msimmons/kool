@@ -1,32 +1,30 @@
 package com.cinchfinancial.kool.profile
 
-import java.math.BigDecimal
+import com.cinchfinancial.kool.types.Decimal
 import java.util.*
 import kotlin.properties.ReadOnlyProperty
 import kotlin.reflect.KProperty
 
 /**
- * Created by mark on 5/3/17.
- */
-/**
  * Returns a scalarValue value from the properties map
  */
-inline fun <T : BaseAttributes, reified V> T.scalarValue(properties: Map<String, Any?>): ReadOnlyProperty<T, V?> {
-    return object : ReadOnlyProperty<T, V?> {
+inline fun <T : BaseAttributes, reified V> T.scalarValue(properties: Map<String, Any?>): ReadOnlyProperty<T, V> {
+    val kClass = V::class
+    return object : ReadOnlyProperty<T, V> {
         private var value = Optional.empty<V>()
-        override fun getValue(thisRef: T, property: KProperty<*>) : V? {
+        override fun getValue(thisRef: T, property: KProperty<*>) : V {
             if ( !value.isPresent ) {
                 val theValue = properties.get(property.name)
-                when (theValue) {
-                    null -> thisRef.addMissingAttribute(property.name)
-                    is V -> value = Optional.of(theValue)
-                    is Int -> when (V::class) {
-                        is BigDecimal -> value = Optional.of(BigDecimal.valueOf(theValue.toLong()) as V)
-                    }
-                    else -> throw IllegalStateException("${thisRef.prefix}${property.name} expected ${V::class.java} but got ${theValue.javaClass}")
+                if ( theValue == null ) thisRef.addMissingAttribute(property.name)
+                value = when (kClass) {
+                    String::class -> Optional.of((theValue ?: "") as V)
+                    Decimal::class -> Optional.of(Decimal(theValue as Number?) as V)
+                    Boolean::class -> Optional.of((theValue ?: false) as V)
+                    Int::class -> Optional.of((theValue ?: 0) as V)
+                    else -> throw IllegalArgumentException("${thisRef.prefix}${property.name} is a $kClass")
                 }
             }
-            return value.orElse(null)
+            return value.get()
         }
     }
 }

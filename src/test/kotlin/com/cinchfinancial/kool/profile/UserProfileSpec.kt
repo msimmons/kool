@@ -2,6 +2,7 @@ package com.cinchfinancial.kool.profile
 
 import com.cinchfinancial.kool.inputs.InputContext
 import com.cinchfinancial.kool.inputs.ModelInputs
+import com.cinchfinancial.kool.types.Decimal
 import com.fasterxml.jackson.databind.DeserializationFeature
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.databind.SerializationFeature
@@ -31,8 +32,9 @@ class UserProfileSpec : BehaviorSpec() {
             Then("it has the input") {
                 inputs.user.has_children shouldBe true
                 inputs.context.computeAll()
-                inputs.tu.revolving_apr shouldEqual null
-                inputs.mx.last_refresh_on shouldEqual null
+                println(inputs.tu.revolving_apr)
+                inputs.tu.revolving_apr shouldEqual Decimal()
+                inputs.mx.last_refresh_on shouldEqual ""
 
                 println(objectMapper.writeValueAsString(inputs))
             }
