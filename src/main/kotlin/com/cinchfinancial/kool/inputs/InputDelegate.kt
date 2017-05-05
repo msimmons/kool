@@ -1,5 +1,6 @@
 package com.cinchfinancial.kool.inputs
 
+import com.cinchfinancial.kool.types.InputType
 import java.util.*
 import kotlin.properties.ReadOnlyProperty
 import kotlin.reflect.KProperty
@@ -7,7 +8,7 @@ import kotlin.reflect.KProperty
 /**
  * Created by mark on 3/4/17.
  */
-class InputDelegate<T : BaseInputs, V>(val type: Class<V>, val formula: () -> V?) {
+class InputDelegate<T : BaseInputs, V>(val klass: Class<V>, val type: InputType, val formula: () -> V?) {
 
     lateinit var kprop: KProperty<*>
     lateinit var kref: Optional<T>
@@ -28,6 +29,7 @@ class InputDelegate<T : BaseInputs, V>(val type: Class<V>, val formula: () -> V?
                     try {
                         missingAttributeListener.active = true
                         val theValue = formula()
+                        //TODO Use the InputType here for Numerics so they serialize correctly
                         missingAttributeListener.active = false
                         if (theValue != null) value = Optional.of(theValue)
                     } catch (e: Exception) {

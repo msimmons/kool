@@ -1,6 +1,6 @@
 package com.cinchfinancial.kool.profile
 
-import com.cinchfinancial.kool.types.Decimal
+import com.cinchfinancial.kool.types.Numeric
 import java.util.*
 import kotlin.properties.ReadOnlyProperty
 import kotlin.reflect.KProperty
@@ -18,9 +18,8 @@ inline fun <T : BaseAttributes, reified V> T.scalarValue(properties: Map<String,
                 if ( theValue == null ) thisRef.addMissingAttribute(property.name)
                 value = when (kClass) {
                     String::class -> Optional.of((theValue ?: "") as V)
-                    Decimal::class -> Optional.of(Decimal(theValue as Number?) as V)
+                    Numeric::class -> Optional.of(Numeric(theValue as Number?) as V)
                     Boolean::class -> Optional.of((theValue ?: false) as V)
-                    Int::class -> Optional.of((theValue ?: 0) as V)
                     else -> throw IllegalArgumentException("${thisRef.prefix}${property.name} is a $kClass")
                 }
             }

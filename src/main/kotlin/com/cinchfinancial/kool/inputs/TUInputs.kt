@@ -5,6 +5,6 @@ package com.cinchfinancial.kool.inputs
  */
 class TUInputs(context: InputContext) : BaseInputs("tu", context) {
 
-    val revolving_apr by formula { user_profile.tu.revolving_apr }
+    val revolving_apr by formula(percent) { user_profile.tu.revolving_apr }
 
 }
