@@ -14,7 +14,7 @@ class AccountInputs(context: InputContext) : BaseInputs("accounts", context) {
     }
 
     val missing_one by formula(obj) {
-        user_profile.accounts.filter { it.type == "credit_card" }.first()
+        user_profile.accounts.filter { it.type == "credit_car" }
     }
 
     val exception_one by formula(usd) {
@@ -25,8 +25,10 @@ class AccountInputs(context: InputContext) : BaseInputs("accounts", context) {
     }
 
     val refers_to_other by formula(bool) {
-        println(model_inputs.user.car_status)
-        println(user_profile.id)
-        model_inputs.user.car_status?.contains(user_profile.id)
+        model_inputs.user.car_status.contains(user_profile.id)
+    }
+
+    val lets_try_this_one by formula(usd) {
+        user_profile.accounts.map {  if ( it.tu.balance.isNull() ) it.mx.balance else it.tu.balance }
     }
 }

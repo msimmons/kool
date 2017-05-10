@@ -8,13 +8,12 @@ import kotlin.reflect.KProperty
 /**
  * Created by mark on 3/4/17.
  */
-class InputDelegate<T : BaseInputs, V>(val klass: Class<V>, val type: InputType, val formula: () -> V?) {
+class InputDelegate<T : BaseInputs, V>(val klass: Class<V>, val type: InputType, val formula: () -> V?) : InputEventListener() {
 
     lateinit var kprop: KProperty<*>
     lateinit var kref: Optional<T>
     private lateinit var delegate: ReadOnlyProperty<T, V>
     var exception = Optional.empty<Throwable>()
-    val missingAttributeListener = MissingAttributeListener()
     val name : String
         get() = if (kref.isPresent) "${kref.get().name}.${kprop.name}" else kprop.name
 
@@ -27,20 +26,23 @@ class InputDelegate<T : BaseInputs, V>(val klass: Class<V>, val type: InputType,
             override fun getValue(thisRef: T, property: KProperty<*>): V {
                 if (!computed) {
                     try {
-                        missingAttributeListener.active = true
-                        val theValue = formula()
-                        //TODO Use the InputType here for Numerics so they serialize correctly
-                        missingAttributeListener.active = false
-                        if (theValue != null) value = Optional.of(theValue)
+                        this@InputDelegate.active = true
+                        value = Optional.ofNullable(formula())
                     } catch (e: Exception) {
-                        exception = Optional.of(e)
+                        when (e) {
+                            is MissingInputException -> this@InputDelegate.addMissingInput(e.name)
+                            else -> exception = Optional.of(e)
+                        }
+                    }
+                    finally {
+                        this@InputDelegate.active = false
                     }
                     computed = true
+                    if (!value.isPresent) throw MissingInputException(name)
                 }
                 return value.orElse(null)
             }
         }
-        thisRef.context.missingAttributeListeners.add(missingAttributeListener)
         return delegate
     }
 

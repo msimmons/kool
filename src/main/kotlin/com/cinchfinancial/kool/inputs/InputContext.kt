@@ -8,7 +8,8 @@ import com.cinchfinancial.kool.profile.UserProfile
 class InputContext(profile: Map<String,Any?>, val modelInputs: ModelInputs) {
 
     val missingAttributes = mutableSetOf<String>()
-    val missingAttributeListeners = mutableListOf<MissingAttributeListener>()
+    val missingInputs = mutableSetOf<String>()
+    val inputEventListeners = mutableListOf<InputEventListener>()
 
     val inputDelegates = mutableSetOf<InputDelegate<*,*>>()
     val userProfile = UserProfile(profile).apply {
@@ -17,12 +18,23 @@ class InputContext(profile: Map<String,Any?>, val modelInputs: ModelInputs) {
 
     fun addMissingAttribute(attribute: String) {
         missingAttributes.add(attribute)
-        missingAttributeListeners.forEach { it.addMissingAttribute(attribute) }
+        inputEventListeners.forEach { it.addMissingAttribute(attribute) }
+    }
+
+    fun addMissingInput(input: String) {
+        missingInputs.add(input)
+        inputEventListeners.forEach { it.addMissingInput(input) }
     }
 
     fun computeAll() {
         inputDelegates.forEach {
-            it.getValue()
+            try {
+                it.getValue()
+            }
+            catch(e: MissingInputException) {
+                println("Missing input: $e")
+                addMissingInput(e.name)
+            }
             if (it.exception.isPresent) {
                 println("${it.kprop.name} exception: ${it.exception.get()}")
             }

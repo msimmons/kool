@@ -11,6 +11,7 @@ class AccountAttributes(properties: Map<String, Any?>) : BaseAttributes(properti
     val type : String by scalarValue(properties)
     val user_input : UserInput by objectValue(properties, ::UserInput)
     val tu : TU by objectValue(properties, ::TU)
+    val mx : MX by objectValue(properties, ::MX)
 
     class UserInput(properties: Map<String, Any?>) : BaseAttributes(properties) {
         val id : String by scalarValue(properties)
@@ -77,6 +78,6 @@ class AccountAttributes(properties: Map<String, Any?>) : BaseAttributes(properti
     }
 
     class MX(properties: Map<String, Any?>) : BaseAttributes(properties) {
-
+        val balance : Numeric by scalarValue(properties)
     }
 }

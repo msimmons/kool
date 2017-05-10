@@ -24,9 +24,16 @@ class ModelInputs(profile: Map<String,Any>) {
     }
 
     @JsonProperty("missing_attributes")
-    fun foo() : Map<String, Set<String>> {
+    fun missingAttributes() : Map<String, Set<String>> {
         return context.inputDelegates
-            .filter { it.missingAttributeListener.missingAttributes.size > 0 }
-            .associate { Pair(it.name, it.missingAttributeListener.missingAttributes) }
+            .filter { it.missingAttributes.size > 0 }
+            .associate { Pair(it.name, it.missingAttributes) }
+    }
+
+    @JsonProperty("missing_inputs")
+    fun missingInputs() : Map<String, Set<String>> {
+        return context.inputDelegates
+            .filter { it.missingInputs.size > 0 }
+            .associate { Pair(it.name, it.missingInputs) }
     }
 }
