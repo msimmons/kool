@@ -2,7 +2,7 @@ package com.cinchfinancial.kool.profile
 
 import com.cinchfinancial.kool.inputs.InputContext
 import com.cinchfinancial.kool.inputs.ModelInputs
-import com.cinchfinancial.kool.types.Decimal
+import com.cinchfinancial.kool.types.Numeric
 import com.fasterxml.jackson.databind.DeserializationFeature
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.databind.SerializationFeature
@@ -21,19 +21,18 @@ class UserProfileSpec : BehaviorSpec() {
         objectMapper.enable(SerializationFeature.INDENT_OUTPUT)
 
         Given("Some user profile") {
-            val profile = objectMapper.readValue(File("src/test/resources/compact-snapshot.json"), Map::class.java) as Map<String,Any>
+            val profile = objectMapper.readValue(File("src/test/resources/snapshot.json"), Map::class.java) as Map<String,Any>
             val inputs = ModelInputs(profile)
 
             Then("the user profile object is cool") {
                 val context = InputContext(profile, ModelInputs(profile))
-                context.userProfile.accounts.size shouldEqual 14
+                context.userProfile.accounts.size shouldEqual 3
             }
 
             Then("it has the input") {
                 inputs.user.has_children shouldBe true
                 inputs.context.computeAll()
-                println(inputs.tu.revolving_apr)
-                inputs.tu.revolving_apr shouldEqual Decimal()
+                inputs.tu.revolving_apr shouldEqual Numeric()
                 inputs.mx.last_refresh_on shouldEqual ""
 
                 println(objectMapper.writeValueAsString(inputs))
