@@ -5,6 +5,6 @@ package com.cinchfinancial.kool.inputs
  */
 class MXInputs(context: InputContext) : BaseInputs("mx", context) {
 
-    val last_refresh_on by formula(usd) {user_profile.mx.checking.temporal_context.last_refresh_on}
-    val months by formula(int) { user_profile.mx.checking.temporal_context.months }
+    val last_refresh_on by formula {user_profile.mx.checking.temporal_context.last_refresh_on}
+    val months by formula { user_profile.mx.checking.temporal_context.months }
 }

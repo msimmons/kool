@@ -1,15 +1,23 @@
 package com.cinchfinancial.kool.profile
 
+import com.cinchfinancial.kool.types.BaseType
 import com.cinchfinancial.kool.types.Numeric
 import com.cinchfinancial.kool.types.Text
+import com.cinchfinancial.kool.types.Truth
 import java.util.*
 import kotlin.properties.ReadOnlyProperty
 import kotlin.reflect.KProperty
 
+typealias usd = Numeric
+typealias percent = Numeric
+typealias int = Numeric
+typealias bool = Truth
+typealias string = Text
+
 /**
  * Returns a scalarValue value from the properties map
  */
-inline fun <T : BaseAttributes, reified V> T.scalarValue(properties: Map<String, Any?>): ReadOnlyProperty<T, V> {
+inline fun <T : BaseAttributes, reified V : BaseType> T.scalarValue(properties: Map<String, Any?>): ReadOnlyProperty<T, V> {
     val kClass = V::class
     return object : ReadOnlyProperty<T, V> {
         private var value = Optional.empty<V>()
@@ -18,11 +26,10 @@ inline fun <T : BaseAttributes, reified V> T.scalarValue(properties: Map<String,
                 val theValue = properties.get(property.name)
                 if ( theValue == null ) thisRef.addMissingAttribute(property.name)
                 value = when (kClass) {
-                    String::class -> Optional.of((theValue ?: "") as V)
                     Text::class -> Optional.of(Text(theValue as String?) as V)
                     Numeric::class -> Optional.of(Numeric(theValue as Number?) as V)
-                    Boolean::class -> Optional.of((theValue ?: false) as V)
-                    else -> throw IllegalArgumentException("${thisRef.prefix}${property.name} is a $kClass")
+                    Truth::class -> Optional.of(Truth(theValue as Boolean?) as V)
+                    else -> throw IllegalArgumentException("Unknown $kClass for ${thisRef.prefix}${property.name}")
                 }
             }
             return value.get()

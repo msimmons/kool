@@ -3,6 +3,7 @@ package com.cinchfinancial.kool.profile
 import com.cinchfinancial.kool.inputs.InputContext
 import com.cinchfinancial.kool.inputs.ModelInputs
 import com.cinchfinancial.kool.types.Numeric
+import com.cinchfinancial.kool.types.Text
 import com.fasterxml.jackson.databind.DeserializationFeature
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.databind.SerializationFeature
@@ -33,7 +34,7 @@ class UserProfileSpec : BehaviorSpec() {
                 inputs.user.has_children shouldBe true
                 inputs.context.computeAll()
                 inputs.tu.revolving_apr shouldEqual Numeric()
-                inputs.mx.last_refresh_on shouldEqual ""
+                inputs.mx.last_refresh_on shouldEqual Text()
 
                 println(objectMapper.writeValueAsString(inputs))
             }

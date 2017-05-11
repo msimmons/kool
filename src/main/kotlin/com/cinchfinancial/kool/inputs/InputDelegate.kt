@@ -1,6 +1,5 @@
 package com.cinchfinancial.kool.inputs
 
-import com.cinchfinancial.kool.types.InputType
 import java.util.*
 import kotlin.properties.ReadOnlyProperty
 import kotlin.reflect.KProperty
@@ -8,7 +7,7 @@ import kotlin.reflect.KProperty
 /**
  * Created by mark on 3/4/17.
  */
-class InputDelegate<T : BaseInputs, V>(val klass: Class<V>, val type: InputType, private val formula: () -> V?) : InputEventListener() {
+class InputDelegate<T : BaseInputs, V>(val klass: Class<V>, private val formula: () -> V) : InputEventListener() {
 
     private lateinit var kprop: KProperty<*>
     private lateinit var kref: T
@@ -30,17 +29,15 @@ class InputDelegate<T : BaseInputs, V>(val klass: Class<V>, val type: InputType,
                         this@InputDelegate.active = true
                         value = Optional.ofNullable(formula())
                     } catch (e: Exception) {
-                        when (e) {
-                            is MissingInputException -> this@InputDelegate.addMissingInput(e.name)
-                            else -> exception = Optional.of(e)
-                        }
+                            exception = Optional.of(e)
                     }
                     finally {
+                        computed = true
+                        if ( !value.isPresent ) this@InputDelegate.addMissingInput(name)
                         this@InputDelegate.active = false
                     }
-                    computed = true
                 }
-                return value.get() ?: throw MissingInputException(name)
+                return value.get()
             }
         }
         return delegate

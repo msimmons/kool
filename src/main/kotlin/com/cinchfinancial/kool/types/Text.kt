@@ -13,6 +13,8 @@ import java.util.*
 @JsonSerialize(converter = Text.JsonConverter::class)
 class Text(text: String?) : CharSequence, BaseType, Comparable<Text> {
 
+    constructor() : this(null)
+
     override val length: Int = text?.length ?: 0
     private val textValue = Optional.ofNullable(text)
 
@@ -44,7 +46,7 @@ class Text(text: String?) : CharSequence, BaseType, Comparable<Text> {
 
     override fun equals(other: Any?): Boolean {
         return when(other) {
-            null -> false
+            null -> !textValue.isPresent
             is Text -> equals(other)
             is String -> equals(other)
             else -> false
@@ -54,7 +56,7 @@ class Text(text: String?) : CharSequence, BaseType, Comparable<Text> {
     private fun equals(other: Text) : Boolean {
         return when (other.textValue.isPresent) {
             true -> equals(other.textValue.get())
-            else -> false
+            else -> !textValue.isPresent
         }
     }
 

@@ -1,7 +1,5 @@
 package com.cinchfinancial.kool.profile
 
-import com.cinchfinancial.kool.types.Numeric
-
 /**
  * Created by mark on 5/2/17.
  */
@@ -14,11 +12,11 @@ class MXAttributes(properties: Map<String, Any?>) : BaseAttributes(properties) {
     }
 
     class TemporalContext(properties: Map<String, Any?>) : BaseAttributes(properties) {
-        val last_refresh_on: String by scalarValue(properties)
-        val newest_transaction_on: String by scalarValue(properties)
-        val oldest_transaction_on: String by scalarValue(properties)
-        val months: Numeric by scalarValue(properties)
-        val days: Numeric by scalarValue(properties)
+        val last_refresh_on: string by scalarValue(properties)
+        val newest_transaction_on: string by scalarValue(properties)
+        val oldest_transaction_on: string by scalarValue(properties)
+        val months: int by scalarValue(properties)
+        val days: int by scalarValue(properties)
 
     }
 }
