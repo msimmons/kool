@@ -23,16 +23,18 @@ class ModelNodeSpec : BehaviorSpec() {
             val inputs = ModelInputs(profile)
             val theModel = model(inputs) {
                 rule {
-                    eval { inputs.tu.revolving_apr > 0 }
+                    eval {
+                        inputs.tu.revolving_apr > 0
+                    }
                     recommend outcome "O1" because "R1"
                     recommend against "O2" because "R2"
                 }
             }
             Then("Evaluate the rules") {
                 theModel.rules.forEach {
-                    //it.evaluate() shouldBe false
-                    println(it.error)
-                    println(it.missingInputs)
+                    it.evaluate() shouldBe false
+                    it.error.isPresent shouldBe false
+                    it.missingInputs.size shouldEqual 1
                 }
             }
         }

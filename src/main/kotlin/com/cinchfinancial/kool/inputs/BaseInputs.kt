@@ -14,9 +14,6 @@ open class BaseInputs(@JsonIgnore val name: String, @JsonIgnore val context: Inp
     protected val model_inputs = context.modelInputs
 
     inline fun <T : BaseInputs, reified V> T.formula(noinline formula: () -> V) : InputDelegate<T, V> {
-        return InputDelegate<T, V>(V::class.java, formula).apply {
-            context.inputDelegates.add(this)
-            context.inputEventListeners.add(this)
-         }
+        return InputDelegate<T, V>(V::class.java, context, formula)
     }
 }

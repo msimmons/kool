@@ -1,5 +1,6 @@
 package com.cinchfinancial.kool.inputs
 
+import com.cinchfinancial.kool.types.BaseType
 import java.util.*
 import kotlin.properties.ReadOnlyProperty
 import kotlin.reflect.KProperty
@@ -7,7 +8,12 @@ import kotlin.reflect.KProperty
 /**
  * Created by mark on 3/4/17.
  */
-class InputDelegate<T : BaseInputs, V>(val klass: Class<V>, private val formula: () -> V) : InputEventListener() {
+class InputDelegate<T : BaseInputs, V>(val klass: Class<V>, private val context: InputContext, private val formula: () -> V) : InputEventListener() {
+
+    init {
+        context.inputDelegates.add(this)
+        context.inputEventListeners.add(this)
+    }
 
     private lateinit var kprop: KProperty<*>
     private lateinit var kref: T
@@ -21,7 +27,7 @@ class InputDelegate<T : BaseInputs, V>(val klass: Class<V>, private val formula:
         kprop = prop
         kref = thisRef
         delegate = object : ReadOnlyProperty<T, V> {
-            var value = Optional.empty<V>()
+            lateinit var value : Optional<V>
             var computed: Boolean = false
             override fun getValue(thisRef: T, property: KProperty<*>): V {
                 if (!computed) {
@@ -33,9 +39,12 @@ class InputDelegate<T : BaseInputs, V>(val klass: Class<V>, private val formula:
                     }
                     finally {
                         computed = true
-                        if ( !value.isPresent ) this@InputDelegate.addMissingInput(name)
                         this@InputDelegate.active = false
                     }
+                }
+                when (value.get()) {
+                    null -> context.addMissingInput(name)
+                    is BaseType -> if ( (value.get() as BaseType).isNull() ) context.addMissingInput(name)
                 }
                 return value.get()
             }
