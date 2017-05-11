@@ -20,7 +20,7 @@ class ModelInputs(profile: Map<String,Any>) {
     fun getExceptions() : Map<String, String?> {
         return context.inputDelegates
             .filter { it.exception.isPresent }
-            .associate { Pair(it.kprop.name, it.exception.get().toString()) }
+            .associate { Pair(it.name, it.exception.get().toString()) }
     }
 
     @JsonProperty("missing_attributes")

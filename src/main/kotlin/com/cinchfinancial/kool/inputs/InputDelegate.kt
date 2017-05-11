@@ -8,18 +8,19 @@ import kotlin.reflect.KProperty
 /**
  * Created by mark on 3/4/17.
  */
-class InputDelegate<T : BaseInputs, V>(val klass: Class<V>, val type: InputType, val formula: () -> V?) : InputEventListener() {
+class InputDelegate<T : BaseInputs, V>(val klass: Class<V>, val type: InputType, private val formula: () -> V?) : InputEventListener() {
 
-    lateinit var kprop: KProperty<*>
-    lateinit var kref: Optional<T>
+    private lateinit var kprop: KProperty<*>
+    private lateinit var kref: T
     private lateinit var delegate: ReadOnlyProperty<T, V>
+
     var exception = Optional.empty<Throwable>()
     val name : String
-        get() = if (kref.isPresent) "${kref.get().name}.${kprop.name}" else kprop.name
+        get() = "${kref.name}.${kprop.name}"
 
     operator fun provideDelegate(thisRef: T, prop: KProperty<*>): ReadOnlyProperty<T, V> {
         kprop = prop
-        kref = Optional.of(thisRef)
+        kref = thisRef
         delegate = object : ReadOnlyProperty<T, V> {
             var value = Optional.empty<V>()
             var computed: Boolean = false
@@ -38,15 +39,14 @@ class InputDelegate<T : BaseInputs, V>(val klass: Class<V>, val type: InputType,
                         this@InputDelegate.active = false
                     }
                     computed = true
-                    if (!value.isPresent) throw MissingInputException(name)
                 }
-                return value.orElse(null)
+                return value.get() ?: throw MissingInputException(name)
             }
         }
         return delegate
     }
 
     fun getValue(): V {
-        return delegate.getValue(kref.get(), kprop)
+        return delegate.getValue(kref, kprop)
     }
 }

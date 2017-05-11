@@ -36,7 +36,7 @@ class InputContext(profile: Map<String,Any?>, val modelInputs: ModelInputs) {
                 addMissingInput(e.name)
             }
             if (it.exception.isPresent) {
-                println("${it.kprop.name} exception: ${it.exception.get()}")
+                println("${it.name} exception: ${it.exception.get()}")
             }
         }
     }
