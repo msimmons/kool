@@ -1,5 +1,7 @@
 package com.cinchfinancial.kool.profile
 
+import com.cinchfinancial.kool.types.*
+
 class UserProfile(profile: Map<String, Any?>) : BaseAttributes(profile) {
 
     val id: string by scalarValue(profile)

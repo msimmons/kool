@@ -1,9 +1,11 @@
 package com.cinchfinancial.kool.inputs
 
+import com.cinchfinancial.kool.types.formula
+
 /**
  * Created by mark on 5/4/17.
  */
-class AccountInputs(context: InputContext) : BaseInputs("accounts", context) {
+class AccountInputs(context: InputContext) : BaseInput("accounts", context) {
 
     val total_balance by formula {
         user_profile.accounts.map { it.user_input.balance }.reduce{ acc, value -> acc + value}
@@ -29,5 +31,17 @@ class AccountInputs(context: InputContext) : BaseInputs("accounts", context) {
 
     val lets_try_this_one by formula {
         user_profile.accounts.map {  if ( it.tu.balance.isNull() ) it.mx.balance else it.tu.balance }
+    }
+
+    val effective_apr by formula {
+        user_profile.accounts.filter { it.type.equals("credit_card") }.map {
+            val require_user_apr = !it.tu.revolving_apr.isNull() && !it.mx.effective_apr.isNull() &&
+                it.tu.revolving_apr - it.mx.effective_apr > 0.05
+            if ( require_user_apr ) it.user_input.reported_apr
+            else {
+                val aprs = listOf(it.tu.revolving_apr, it.mx.effective_apr, it.user_input.reported_apr)
+                aprs.firstOrNull { !it.isNull() } ?: it.user_input.reported_apr
+            }
+        }
     }
 }

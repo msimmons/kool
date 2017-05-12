@@ -1,5 +1,10 @@
 package com.cinchfinancial.kool.profile
 
+import com.cinchfinancial.kool.types.int
+import com.cinchfinancial.kool.types.objectValue
+import com.cinchfinancial.kool.types.scalarValue
+import com.cinchfinancial.kool.types.string
+
 /**
  * Created by mark on 5/2/17.
  */
@@ -17,6 +22,5 @@ class MXAttributes(properties: Map<String, Any?>) : BaseAttributes(properties) {
         val oldest_transaction_on: string by scalarValue(properties)
         val months: int by scalarValue(properties)
         val days: int by scalarValue(properties)
-
     }
 }

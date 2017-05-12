@@ -35,6 +35,7 @@ class UserProfileSpec : BehaviorSpec() {
                 inputs.context.computeAll()
                 inputs.tu.revolving_apr shouldEqual Numeric()
                 inputs.mx.last_refresh_on shouldEqual Text()
+                println(inputs.accounts.effective_apr)
 
                 println(objectMapper.writeValueAsString(inputs))
             }

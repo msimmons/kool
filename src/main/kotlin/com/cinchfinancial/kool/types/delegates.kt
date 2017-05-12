@@ -1,9 +1,8 @@
-package com.cinchfinancial.kool.profile
+package com.cinchfinancial.kool.types
 
-import com.cinchfinancial.kool.types.BaseType
-import com.cinchfinancial.kool.types.Numeric
-import com.cinchfinancial.kool.types.Text
-import com.cinchfinancial.kool.types.Truth
+import com.cinchfinancial.kool.inputs.BaseInput
+import com.cinchfinancial.kool.inputs.ModelInput
+import com.cinchfinancial.kool.profile.BaseAttributes
 import java.util.*
 import kotlin.properties.ReadOnlyProperty
 import kotlin.reflect.KProperty
@@ -21,10 +20,10 @@ inline fun <T : BaseAttributes, reified V : BaseType> T.scalarValue(properties: 
     val kClass = V::class
     return object : ReadOnlyProperty<T, V> {
         private var value = Optional.empty<V>()
-        override fun getValue(thisRef: T, property: KProperty<*>) : V {
-            if ( !value.isPresent ) {
+        override fun getValue(thisRef: T, property: KProperty<*>): V {
+            if (!value.isPresent) {
                 val theValue = properties.get(property.name)
-                if ( theValue == null ) thisRef.addMissingAttribute(property.name)
+                if (theValue == null) thisRef.addMissingAttribute(property.name)
                 value = when (kClass) {
                     Text::class -> Optional.of(Text(theValue as String?) as V)
                     Numeric::class -> Optional.of(Numeric(theValue as Number?) as V)
@@ -44,15 +43,14 @@ inline fun <T : BaseAttributes, reified V : BaseType> T.scalarValue(properties: 
  */
 fun <T : BaseAttributes, V : BaseAttributes> T.objectValue(
     properties: Map<String, Any?>,
-    factory: (Map<String,Any?>) -> V
-): ReadOnlyProperty<T, V>
-{
+    factory: (Map<String, Any?>) -> V
+): ReadOnlyProperty<T, V> {
     return object : ReadOnlyProperty<T, V> {
         private var mapObject = Optional.empty<V>()
-        override fun getValue(thisRef: T, property: KProperty<*>) : V {
-            if ( !mapObject.isPresent ) {
-                if ( properties.get(property.name) == null ) thisRef.addMissingAttribute(property.name)
-                val subMap : Map<String,Any?> = properties.get(property.name) as Map<String,Any?>? ?: mapOf<String,Any?>()
+        override fun getValue(thisRef: T, property: KProperty<*>): V {
+            if (!mapObject.isPresent) {
+                if (properties.get(property.name) == null) thisRef.addMissingAttribute(property.name)
+                val subMap: Map<String, Any?> = properties.get(property.name) as Map<String, Any?>? ?: mapOf<String, Any?>()
                 mapObject = Optional.of(factory(subMap))
                 mapObject.get().apply {
                     context = thisRef.context
@@ -70,10 +68,10 @@ fun <T : BaseAttributes, V : BaseAttributes> T.objectValue(
 fun <T : BaseAttributes, V> T.scalarArray(properties: Map<String, Any?>): ReadOnlyProperty<T, Collection<V>> {
     return object : ReadOnlyProperty<T, Collection<V>> {
         private var collection = Optional.empty<Collection<V>>()
-        override fun getValue(thisRef: T, property: KProperty<*>) : Collection<V> {
-            if ( !collection.isPresent ) {
-                if ( properties.get(property.name) == null ) thisRef.addMissingAttribute(property.name)
-                val theCollection : Collection<V> = properties.get(property.name) as Collection<V>? ?: listOf<V>()
+        override fun getValue(thisRef: T, property: KProperty<*>): Collection<V> {
+            if (!collection.isPresent) {
+                if (properties.get(property.name) == null) thisRef.addMissingAttribute(property.name)
+                val theCollection: Collection<V> = properties.get(property.name) as Collection<V>? ?: listOf<V>()
                 collection = Optional.of(theCollection)
             }
             return collection.get()
@@ -87,15 +85,14 @@ fun <T : BaseAttributes, V> T.scalarArray(properties: Map<String, Any?>): ReadOn
  */
 fun <T : BaseAttributes, V : BaseAttributes> T.objectArray(
     properties: Map<String, Any?>,
-    factory: (Map<String,Any?>) -> V
-): ReadOnlyProperty<T, Collection<V>>
-{
+    factory: (Map<String, Any?>) -> V
+): ReadOnlyProperty<T, Collection<V>> {
     return object : ReadOnlyProperty<T, Collection<V>> {
         private var collection = Optional.empty<Collection<V>>()
-        override fun getValue(thisRef: T, property: KProperty<*>) : Collection<V> {
-            if ( !collection.isPresent ) {
-                if ( properties.get(property.name) == null ) thisRef.addMissingAttribute(property.name)
-                val value : Collection<Map<String,Any?>> = properties.get(property.name) as Collection<Map<String, Any?>>? ?: listOf<Map<String,Any?>>()
+        override fun getValue(thisRef: T, property: KProperty<*>): Collection<V> {
+            if (!collection.isPresent) {
+                if (properties.get(property.name) == null) thisRef.addMissingAttribute(property.name)
+                val value: Collection<Map<String, Any?>> = properties.get(property.name) as Collection<Map<String, Any?>>? ?: listOf<Map<String, Any?>>()
                 collection = Optional.of(value.mapIndexed { index, it ->
                     factory(it).apply {
                         this.prefix = "${thisRef.prefix}${property.name}[$index]."
@@ -107,3 +104,8 @@ fun <T : BaseAttributes, V : BaseAttributes> T.objectArray(
         }
     }
 }
+
+/**
+ * Return a [ModelInput.Provider] delegate provider for the given formula
+ */
+fun <T : BaseInput, V> T.formula(formula: () -> V) = ModelInput.Provider<T, V>(formula)

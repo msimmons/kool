@@ -1,5 +1,7 @@
 package com.cinchfinancial.kool.profile
 
+import com.cinchfinancial.kool.types.*
+
 /**
  * Created by mark on 5/2/17.
  */
@@ -16,6 +18,7 @@ class AccountAttributes(properties: Map<String, Any?>) : BaseAttributes(properti
         val source : string by scalarValue(properties)
         val balance : usd by scalarValue(properties)
         val is_new_account: bool by scalarValue(properties)
+        val reported_apr : percent by scalarValue(properties)
     }
 
     class TU(properties: Map<String, Any?>) : BaseAttributes(properties) {
@@ -40,7 +43,7 @@ class AccountAttributes(properties: Map<String, Any?>) : BaseAttributes(properti
         val credit_limit: usd by scalarValue(properties)
         val months_history: int by scalarValue(properties)
         val delinquencies_30_days: int by scalarValue(properties)
-        val revolving_apr: bool by scalarValue(properties)
+        val revolving_apr: percent by scalarValue(properties)
         val last_paid_on: string by scalarValue(properties)
         val closed_indicator: string by scalarValue(properties)
         val type: string by scalarValue(properties)
@@ -77,5 +80,6 @@ class AccountAttributes(properties: Map<String, Any?>) : BaseAttributes(properti
 
     class MX(properties: Map<String, Any?>) : BaseAttributes(properties) {
         val balance : usd by scalarValue(properties)
+        val effective_apr : percent by scalarValue(properties)
     }
 }

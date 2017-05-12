@@ -20,8 +20,8 @@ class RuleNode(val inputs: ModelInputs) : InputEventListener() {
         private set
     val recommend = this
 
-    fun eval(eval: () -> Boolean) {
-        formula = eval
+    fun formula(formula: () -> Boolean) {
+        this.formula = formula
     }
 
     fun evaluate() : Boolean {

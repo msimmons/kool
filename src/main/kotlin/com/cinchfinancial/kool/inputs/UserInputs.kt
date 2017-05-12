@@ -1,9 +1,11 @@
 package com.cinchfinancial.kool.inputs
 
+import com.cinchfinancial.kool.types.formula
+
 /**
  * Created by mark on 5/4/17.
  */
-class UserInputs(context: InputContext) : BaseInputs("user", context) {
+class UserInputs(context: InputContext) : BaseInput("user", context) {
 
     val onboarded by formula { user_profile.is_onboarded }
     val missing_one by formula {user_profile.missing_one}

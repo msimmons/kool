@@ -1,5 +1,7 @@
 package com.cinchfinancial.kool.profile
 
+import com.cinchfinancial.kool.types.*
+
 /**
  * Created by mark on 5/2/17.
  */

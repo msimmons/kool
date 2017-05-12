@@ -1,5 +1,7 @@
 package com.cinchfinancial.kool.profile
 
+import com.cinchfinancial.kool.types.*
+
 /**
  * Created by mark on 5/2/17.
  */
@@ -24,5 +26,4 @@ class UserAttributes(properties: Map<String, Any?>): BaseAttributes(properties){
     val height_inches: int by scalarValue(properties)
     val gender: string by scalarValue(properties)
     val employment_years: int by scalarValue(properties)
-
 }

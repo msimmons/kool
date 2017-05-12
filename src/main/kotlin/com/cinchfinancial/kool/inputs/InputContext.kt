@@ -5,13 +5,13 @@ import com.cinchfinancial.kool.profile.UserProfile
 /**
  * Created by mark on 5/4/17.
  */
-class InputContext(profile: Map<String,Any?>, val modelInputs: ModelInputs) {
+class InputContext(profile: Map<String, Any?>, val modelInputs: ModelInputs) {
 
     val missingAttributes = mutableSetOf<String>()
     val missingInputs = mutableSetOf<String>()
     val inputEventListeners = mutableListOf<InputEventListener>()
 
-    val inputDelegates = mutableSetOf<InputDelegate<*,*>>()
+    val inputDelegates = mutableSetOf<ModelInput<*, *>>()
     val userProfile = UserProfile(profile).apply {
         context = this@InputContext
     }
@@ -28,13 +28,7 @@ class InputContext(profile: Map<String,Any?>, val modelInputs: ModelInputs) {
 
     fun computeAll() {
         inputDelegates.forEach {
-            try {
-                it.getValue()
-            }
-            catch(e: MissingInputException) {
-                println("Missing input: $e")
-                addMissingInput(e.name)
-            }
+            it.getValue()
             if (it.exception.isPresent) {
                 println("${it.name} exception: ${it.exception.get()}")
             }

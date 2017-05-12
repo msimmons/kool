@@ -1,5 +1,9 @@
 package com.cinchfinancial.kool.profile
 
+import com.cinchfinancial.kool.types.bool
+import com.cinchfinancial.kool.types.scalarValue
+import com.cinchfinancial.kool.types.usd
+
 /**
  * Created by mark on 5/2/17.
  */
