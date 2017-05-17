@@ -1,6 +1,6 @@
 package com.cinchfinancial.kool.inputs
 
-import com.cinchfinancial.kool.types.formula
+import com.cinchfinancial.kool.delegates.formula
 
 /**
  * Created by mark on 5/4/17.

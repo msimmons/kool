@@ -34,9 +34,9 @@ class ModelNodeSpec : BehaviorSpec() {
                 theModel.rules.forEach {
                     it.evaluate() shouldBe true
                     it.error.isPresent shouldBe false
-                    it.missingInputs.size shouldEqual 1
-                    it.missingInputs should contain("tu.revolving_apr")
-                    println(it.missingAttributes)
+                    it.dependencies.size shouldEqual 2
+                    //it.dependencies should contain("tu.revolving_apr")
+                    println(it.dependencies)
                 }
             }
         }

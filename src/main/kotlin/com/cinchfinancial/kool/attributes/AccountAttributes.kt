@@ -1,11 +1,11 @@
-package com.cinchfinancial.kool.profile
+package com.cinchfinancial.kool.attributes
 
-import com.cinchfinancial.kool.types.*
+import com.cinchfinancial.kool.delegates.*
 
 /**
  * Created by mark on 5/2/17.
  */
-class AccountAttributes(properties: Map<String, Any?>) : BaseAttributes(properties) {
+class AccountAttributes(properties: Map<String, Any?>) : BaseAttribute() {
 
     val id : string by scalarValue(properties)
     val type : string by scalarValue(properties)
@@ -13,7 +13,7 @@ class AccountAttributes(properties: Map<String, Any?>) : BaseAttributes(properti
     val tu : TU by objectValue(properties, ::TU)
     val mx : MX by objectValue(properties, ::MX)
 
-    class UserInput(properties: Map<String, Any?>) : BaseAttributes(properties) {
+    class UserInput(properties: Map<String, Any?>) : BaseAttribute() {
         val id : string by scalarValue(properties)
         val source : string by scalarValue(properties)
         val balance : usd by scalarValue(properties)
@@ -21,7 +21,7 @@ class AccountAttributes(properties: Map<String, Any?>) : BaseAttributes(properti
         val reported_apr : percent by scalarValue(properties)
     }
 
-    class TU(properties: Map<String, Any?>) : BaseAttributes(properties) {
+    class TU(properties: Map<String, Any?>) : BaseAttribute() {
         val history by objectArray(properties, ::TUHistory)
         val summary by objectValue(properties, ::TUSummary)
         val last_payment: usd by scalarValue(properties)
@@ -61,7 +61,7 @@ class AccountAttributes(properties: Map<String, Any?>) : BaseAttributes(properti
         val source: string by scalarValue(properties)
     }
 
-    class TUHistory(properties: Map<String, Any?>) : BaseAttributes(properties) {
+    class TUHistory(properties: Map<String, Any?>) : BaseAttribute() {
         val scheduled_monthly_payment: usd by scalarValue(properties)
         val past_due: bool by scalarValue(properties)
         val month_effective: string by scalarValue(properties)
@@ -72,13 +72,13 @@ class AccountAttributes(properties: Map<String, Any?>) : BaseAttributes(properti
         val actual_payment: usd by scalarValue(properties)
     }
 
-    class TUSummary(properties: Map<String, Any?>) : BaseAttributes(properties) {
+    class TUSummary(properties: Map<String, Any?>) : BaseAttribute() {
         val scheduled_monthly_payment_amount: usd by scalarValue(properties)
         val most_recent_payment_amount: usd by scalarValue(properties)
         val effective_date: string by scalarValue(properties)
     }
 
-    class MX(properties: Map<String, Any?>) : BaseAttributes(properties) {
+    class MX(properties: Map<String, Any?>) : BaseAttribute() {
         val balance : usd by scalarValue(properties)
         val effective_apr : percent by scalarValue(properties)
     }

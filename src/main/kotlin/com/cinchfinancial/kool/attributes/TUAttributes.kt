@@ -1,11 +1,11 @@
-package com.cinchfinancial.kool.profile
+package com.cinchfinancial.kool.attributes
 
-import com.cinchfinancial.kool.types.*
+import com.cinchfinancial.kool.delegates.*
 
 /**
  * Created by mark on 5/2/17.
  */
-class TUAttributes(properties: Map<String, Any?>) : BaseAttributes(properties){
+class TUAttributes(properties: Map<String, Any?>) : BaseAttribute(){
 
     val vantage_3_score: int by scalarValue(properties)
     val total_monthly_payments_revolving_cards: usd by scalarValue(properties)

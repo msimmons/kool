@@ -82,11 +82,11 @@ class Numeric(number: Number?) : Comparable<Numeric>, BaseType {
         return div(Numeric(x))
     }
 
-    override fun equals(x: Any?) : Boolean {
-        return when(x) {
+    override fun equals(other: Any?) : Boolean {
+        return when(other) {
             null -> return !numericValue.isPresent
-            is Numeric -> equals(x)
-            is Number -> equals(x)
+            is Numeric -> equals(other)
+            is Number -> equals(other)
             else -> false
         }
     }
@@ -102,9 +102,9 @@ class Numeric(number: Number?) : Comparable<Numeric>, BaseType {
         }
     }
 
-    override operator fun compareTo(x: Numeric) : Int {
-        return when(numericValue.isPresent && x.numericValue.isPresent) {
-            true -> numericValue.get().compareTo(x.numericValue.get())
+    override operator fun compareTo(other: Numeric) : Int {
+        return when(numericValue.isPresent && other.numericValue.isPresent) {
+            true -> numericValue.get().compareTo(other.numericValue.get())
             else -> 0
         }
     }

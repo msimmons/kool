@@ -1,4 +1,4 @@
-package com.cinchfinancial.kool.profile
+package com.cinchfinancial.kool.attributes
 
 import com.cinchfinancial.kool.inputs.InputContext
 import com.cinchfinancial.kool.inputs.ModelInputs
@@ -21,11 +21,11 @@ class UserProfileSpec : BehaviorSpec() {
         objectMapper.enable(DeserializationFeature.ACCEPT_EMPTY_STRING_AS_NULL_OBJECT)
         objectMapper.enable(SerializationFeature.INDENT_OUTPUT)
 
-        Given("Some user profile") {
+        Given("Some user attributes") {
             val profile = objectMapper.readValue(File("src/test/resources/snapshot.json"), Map::class.java) as Map<String,Any>
             val inputs = ModelInputs(profile)
 
-            Then("the user profile object is cool") {
+            Then("the user attributes object is cool") {
                 val context = InputContext(profile, ModelInputs(profile))
                 context.userProfile.accounts.size shouldEqual 3
             }

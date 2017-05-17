@@ -1,5 +1,7 @@
-package com.cinchfinancial.kool.inputs
+package com.cinchfinancial.kool.delegates
 
+import com.cinchfinancial.kool.inputs.BaseInput
+import com.cinchfinancial.kool.inputs.InputListener
 import com.cinchfinancial.kool.types.BaseType
 import java.util.*
 import kotlin.properties.ReadOnlyProperty
@@ -8,40 +10,48 @@ import kotlin.reflect.KProperty
 /**
  * A [ReadOnlyProperty] delegate that supplies the value for a model input
  */
-class ModelInput<T : BaseInput, V>(val parent : T, val property: KProperty<*>, val formula : () -> V) : InputEventListener(), ReadOnlyProperty<T,V> {
+class ModelInput<T : BaseInput, V>(
+        private val parent : T,
+        private val property: KProperty<*>,
+        private val formula : () -> V
+) : InputListener(), ModelProperty<T, V> {
 
-    var computed : Boolean = false
-    val name : String = "${parent.name}.${property.name}"
-    val context = parent.context
+    private var computed : Boolean = false
+    override val name = "${parent.name}.${property.name}"
+    override val type = "input"
+    override var missing = false
+    private val context = parent.context
     var exception = Optional.empty<Throwable>()
-    var value = Optional.empty<V>()
+    private var value = Optional.empty<V>()
 
     init {
-        context.inputEventListeners.add(this)
         context.inputDelegates.add(this)
     }
 
     /**
      * Delegate to the formula
      */
-    override fun getValue(thisRef: T, kProperty: KProperty<*>): V {
+    override fun getValue(thisRef: T, property: KProperty<*>): V {
         if (!computed) {
             try {
-                active = true
+                thisRef.context.pushListener(this)
                 value = Optional.ofNullable(formula())
             } catch (e: Exception) {
                 exception = Optional.of(e)
             }
             finally {
                 computed = true
-                active = false
+                thisRef.context.popListener()
             }
         }
-        when (value.get()) {
-            null -> context.addMissingInput(name)
-            is BaseType -> if ( (value.get() as BaseType).isNull() ) context.addMissingInput(name)
+        val theValue = value.orElse(null)
+        missing = when (theValue) {
+            null -> true
+            is BaseType -> theValue.isNull()
+            else -> false
         }
-        return value.get()
+        context.addDependency(this)
+        return theValue
     }
 
     /**
@@ -49,6 +59,13 @@ class ModelInput<T : BaseInput, V>(val parent : T, val property: KProperty<*>, v
      */
     fun getValue(): V {
         return getValue(parent, property)
+    }
+
+    /**
+     * Print as a string
+     */
+    override fun toString() : String {
+        return "$name [$type, $missing, $exception]"
     }
 
     /**

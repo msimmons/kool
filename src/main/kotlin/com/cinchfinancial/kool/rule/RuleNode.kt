@@ -1,17 +1,13 @@
 package com.cinchfinancial.kool.rule
 
-import com.cinchfinancial.kool.inputs.InputEventListener
+import com.cinchfinancial.kool.inputs.InputListener
 import com.cinchfinancial.kool.inputs.ModelInputs
 import java.util.*
 
 /**
  * Created by mark on 3/4/17.
  */
-class RuleNode(val inputs: ModelInputs) : InputEventListener() {
-
-    init {
-        inputs.context.inputEventListeners.add(this)
-    }
+class RuleNode(val inputs: ModelInputs) : InputListener() {
 
     lateinit var formula : ()->Boolean
         private set
@@ -26,14 +22,14 @@ class RuleNode(val inputs: ModelInputs) : InputEventListener() {
 
     fun evaluate() : Boolean {
         try {
-            active = true
+            inputs.context.pushListener(this)
             return formula()
         }
         catch (e:Exception) {
             error = Optional.of(e)
         }
         finally {
-            active = false
+            inputs.context.popListener()
         }
         return false
     }

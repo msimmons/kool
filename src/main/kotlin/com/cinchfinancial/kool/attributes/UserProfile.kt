@@ -1,8 +1,8 @@
-package com.cinchfinancial.kool.profile
+package com.cinchfinancial.kool.attributes
 
-import com.cinchfinancial.kool.types.*
+import com.cinchfinancial.kool.delegates.*
 
-class UserProfile(profile: Map<String, Any?>) : BaseAttributes(profile) {
+class UserProfile(profile: Map<String, Any?>) : BaseAttribute() {
 
     val id: string by scalarValue(profile)
     val is_onboarded : bool by scalarValue(profile)

@@ -1,13 +1,13 @@
-package com.cinchfinancial.kool.profile
+package com.cinchfinancial.kool.attributes
 
-import com.cinchfinancial.kool.types.bool
-import com.cinchfinancial.kool.types.scalarValue
-import com.cinchfinancial.kool.types.usd
+import com.cinchfinancial.kool.delegates.bool
+import com.cinchfinancial.kool.delegates.scalarValue
+import com.cinchfinancial.kool.delegates.usd
 
 /**
  * Created by mark on 5/2/17.
  */
-class SystemAttributes(properties: Map<String, Any?>) : BaseAttributes(properties) {
+class SystemAttributes(properties: Map<String, Any?>) : BaseAttribute() {
 
     val locked_savings_lump_amount: usd by scalarValue(properties)
     val locked_savings_flow_amount: usd by scalarValue(properties)

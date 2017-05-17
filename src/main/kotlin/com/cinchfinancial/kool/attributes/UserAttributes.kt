@@ -1,11 +1,11 @@
-package com.cinchfinancial.kool.profile
+package com.cinchfinancial.kool.attributes
 
-import com.cinchfinancial.kool.types.*
+import com.cinchfinancial.kool.delegates.*
 
 /**
  * Created by mark on 5/2/17.
  */
-class UserAttributes(properties: Map<String, Any?>): BaseAttributes(properties){
+class UserAttributes(properties: Map<String, Any?>): BaseAttribute(){
 
     val unlinked_cash: usd by scalarValue(properties)
     val number_of_children: int by scalarValue(properties)

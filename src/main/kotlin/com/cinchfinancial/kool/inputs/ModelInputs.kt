@@ -1,5 +1,6 @@
 package com.cinchfinancial.kool.inputs
 
+import com.cinchfinancial.kool.delegates.ModelProperty
 import com.fasterxml.jackson.annotation.JsonIgnore
 import com.fasterxml.jackson.annotation.JsonProperty
 
@@ -23,17 +24,10 @@ class ModelInputs(profile: Map<String,Any>) {
             .associate { Pair(it.name, it.exception.get().toString()) }
     }
 
-    @JsonProperty("missing_attributes")
-    fun missingAttributes() : Map<String, Set<String>> {
+    @JsonProperty("missing_dependencies")
+    fun missingDependencies() : Map<String, List<ModelProperty<*, *>>> {
         return context.inputDelegates
-            .filter { it.missingAttributes.size > 0 }
-            .associate { Pair(it.name, it.missingAttributes) }
-    }
-
-    @JsonProperty("missing_inputs")
-    fun missingInputs() : Map<String, Set<String>> {
-        return context.inputDelegates
-            .filter { it.missingInputs.size > 0 }
-            .associate { Pair(it.name, it.missingInputs) }
+                .filter { it.dependencies.any { it.value.missing }}
+                .associate { Pair(it.name, it.dependencies.filter { it.value.missing }.map { it.value }) }
     }
 }

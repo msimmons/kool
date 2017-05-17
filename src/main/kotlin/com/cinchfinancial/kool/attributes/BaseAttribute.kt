@@ -1,5 +1,6 @@
-package com.cinchfinancial.kool.profile
+package com.cinchfinancial.kool.attributes
 
+import com.cinchfinancial.kool.delegates.ModelProperty
 import com.cinchfinancial.kool.inputs.InputContext
 import com.fasterxml.jackson.annotation.JsonIgnore
 
@@ -8,7 +9,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore
  * Base class for all user attributes provides context and tracks
  * prefix for attribute naming
  */
-open class BaseAttributes(properties: Map<String, Any?>) {
+open class BaseAttribute {
 
     @JsonIgnore
     lateinit var context : InputContext
@@ -16,8 +17,8 @@ open class BaseAttributes(properties: Map<String, Any?>) {
     @JsonIgnore
     var prefix : String = ""
 
-    fun addMissingAttribute(attribute: String) {
-        context.addMissingAttribute("$prefix$attribute")
+    fun addDependency(property: ModelProperty<*, *>) {
+        context.addDependency(property)
     }
 
 }
