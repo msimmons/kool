@@ -1,6 +1,6 @@
-package com.cinchfinancial.kool.rule
+package com.cinchfinancial.kool.rules
 
-import com.cinchfinancial.kool.inputs.InputListener
+import com.cinchfinancial.kool.types.InputListener
 import com.cinchfinancial.kool.inputs.ModelInputs
 import java.util.*
 

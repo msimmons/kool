@@ -1,6 +1,7 @@
 package com.cinchfinancial.kool.attributes
 
-import com.cinchfinancial.kool.delegates.*
+import com.cinchfinancial.kool.delegates.scalarValue
+import com.cinchfinancial.kool.types.*
 
 /**
  * Created by mark on 5/2/17.

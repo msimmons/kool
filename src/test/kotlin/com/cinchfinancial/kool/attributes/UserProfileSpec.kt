@@ -1,6 +1,6 @@
 package com.cinchfinancial.kool.attributes
 
-import com.cinchfinancial.kool.inputs.InputContext
+import com.cinchfinancial.kool.types.InputContext
 import com.cinchfinancial.kool.inputs.ModelInputs
 import com.cinchfinancial.kool.types.Numeric
 import com.cinchfinancial.kool.types.Text

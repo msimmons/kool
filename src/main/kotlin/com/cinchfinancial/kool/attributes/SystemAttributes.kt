@@ -1,8 +1,9 @@
 package com.cinchfinancial.kool.attributes
 
-import com.cinchfinancial.kool.delegates.bool
+import com.cinchfinancial.kool.types.bool
 import com.cinchfinancial.kool.delegates.scalarValue
-import com.cinchfinancial.kool.delegates.usd
+import com.cinchfinancial.kool.types.usd
+import com.cinchfinancial.kool.types.BaseAttribute
 
 /**
  * Created by mark on 5/2/17.

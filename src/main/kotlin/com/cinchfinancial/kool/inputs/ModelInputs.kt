@@ -1,6 +1,7 @@
 package com.cinchfinancial.kool.inputs
 
 import com.cinchfinancial.kool.delegates.ModelProperty
+import com.cinchfinancial.kool.types.InputContext
 import com.fasterxml.jackson.annotation.JsonIgnore
 import com.fasterxml.jackson.annotation.JsonProperty
 

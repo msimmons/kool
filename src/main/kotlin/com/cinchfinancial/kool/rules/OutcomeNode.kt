@@ -1,4 +1,4 @@
-package com.cinchfinancial.kool.rule
+package com.cinchfinancial.kool.rules
 
 /**
  * Created by mark on 3/4/17.

@@ -1,8 +1,9 @@
-package com.cinchfinancial.kool.inputs
+package com.cinchfinancial.kool.types
 
 import com.cinchfinancial.kool.delegates.ModelInput
 import com.cinchfinancial.kool.attributes.UserProfile
 import com.cinchfinancial.kool.delegates.ModelProperty
+import com.cinchfinancial.kool.inputs.ModelInputs
 import java.util.*
 
 /**

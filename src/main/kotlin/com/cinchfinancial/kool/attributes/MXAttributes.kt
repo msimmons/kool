@@ -1,9 +1,10 @@
 package com.cinchfinancial.kool.attributes
 
-import com.cinchfinancial.kool.delegates.int
+import com.cinchfinancial.kool.types.int
 import com.cinchfinancial.kool.delegates.objectValue
 import com.cinchfinancial.kool.delegates.scalarValue
-import com.cinchfinancial.kool.delegates.string
+import com.cinchfinancial.kool.types.string
+import com.cinchfinancial.kool.types.BaseAttribute
 
 /**
  * Created by mark on 5/2/17.

@@ -1,4 +1,4 @@
-package com.cinchfinancial.kool.inputs
+package com.cinchfinancial.kool.types
 
 import com.fasterxml.jackson.annotation.JsonIgnore
 

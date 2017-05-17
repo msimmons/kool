@@ -1,17 +1,6 @@
 package com.cinchfinancial.kool.delegates
 
-import com.cinchfinancial.kool.attributes.BaseAttribute
-import com.cinchfinancial.kool.inputs.BaseInput
-import com.cinchfinancial.kool.types.BaseType
-import com.cinchfinancial.kool.types.Numeric
-import com.cinchfinancial.kool.types.Text
-import com.cinchfinancial.kool.types.Truth
-
-typealias usd = Numeric
-typealias percent = Numeric
-typealias int = Numeric
-typealias bool = Truth
-typealias string = Text
+import com.cinchfinancial.kool.types.*
 
 /**
  * Returns a scalarValue value from the properties map

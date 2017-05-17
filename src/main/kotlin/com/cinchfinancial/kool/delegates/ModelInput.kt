@@ -1,7 +1,7 @@
 package com.cinchfinancial.kool.delegates
 
-import com.cinchfinancial.kool.inputs.BaseInput
-import com.cinchfinancial.kool.inputs.InputListener
+import com.cinchfinancial.kool.types.BaseInput
+import com.cinchfinancial.kool.types.InputListener
 import com.cinchfinancial.kool.types.BaseType
 import java.util.*
 import kotlin.properties.ReadOnlyProperty

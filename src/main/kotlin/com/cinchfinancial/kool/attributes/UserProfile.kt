@@ -1,6 +1,11 @@
 package com.cinchfinancial.kool.attributes
 
-import com.cinchfinancial.kool.delegates.*
+import com.cinchfinancial.kool.delegates.objectArray
+import com.cinchfinancial.kool.delegates.objectValue
+import com.cinchfinancial.kool.delegates.scalarValue
+import com.cinchfinancial.kool.types.BaseAttribute
+import com.cinchfinancial.kool.types.bool
+import com.cinchfinancial.kool.types.string
 
 class UserProfile(profile: Map<String, Any?>) : BaseAttribute() {
 

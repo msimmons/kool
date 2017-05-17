@@ -1,4 +1,4 @@
-package com.cinchfinancial.kool.rule
+package com.cinchfinancial.kool.rules
 
 import com.cinchfinancial.kool.inputs.ModelInputs
 import com.fasterxml.jackson.databind.DeserializationFeature

@@ -1,6 +1,6 @@
 package com.cinchfinancial.kool.delegates
 
-import com.cinchfinancial.kool.attributes.BaseAttribute
+import com.cinchfinancial.kool.types.BaseAttribute
 import com.fasterxml.jackson.annotation.JsonIgnore
 import java.util.*
 import kotlin.reflect.KProperty
