@@ -2,6 +2,7 @@ package com.cinchfinancial.kool.inputs
 
 import com.cinchfinancial.kool.delegates.formula
 import com.cinchfinancial.kool.types.BaseInput
+import com.cinchfinancial.kool.types.FALSE
 import com.cinchfinancial.kool.types.InputContext
 
 /**
@@ -44,6 +45,14 @@ class AccountInputs(context: InputContext) : BaseInput("accounts", context) {
                 val aprs = listOf(it.tu.revolving_apr, it.mx.effective_apr, it.user_input.reported_apr)
                 aprs.firstOrNull { !it.isNull() } ?: it.user_input.reported_apr
             }
+        }
+    }
+
+    val likely_revolver by formula {
+        user_profile.accounts.filter { it.type.equals("credit_card") }.map {
+            val hasBalance = !it.mx.balance.isNull() && it.mx.balance > 0
+            if ( hasBalance ) !it.user_input.pay_in_full_each_month
+            else FALSE
         }
     }
 }

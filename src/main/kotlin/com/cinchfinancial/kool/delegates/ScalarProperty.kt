@@ -30,7 +30,7 @@ class ScalarProperty<T : BaseAttribute, V>(
             value = when (kClass) {
                 Text::class -> Optional.of(Text(theValue as String?) as V)
                 Numeric::class -> Optional.of(Numeric(theValue as Number?) as V)
-                Truth::class -> Optional.of(Truth(theValue as Boolean?) as V)
+                Truth::class -> Optional.of(Truth.valueOf(theValue) as V)
                 else -> throw IllegalArgumentException("Unknown $kClass for ${thisRef.prefix}${property.name}")
             }
         }

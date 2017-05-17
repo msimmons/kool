@@ -11,7 +11,7 @@ import java.util.*
  * Null-safe representation of a textual type
  */
 @JsonSerialize(converter = Truth.JsonConverter::class)
-class Truth(truth: Boolean?) : BaseType {
+sealed class Truth(truth: Boolean?) : BaseType {
 
     constructor() : this(null)
 
@@ -44,7 +44,14 @@ class Truth(truth: Boolean?) : BaseType {
         }
     }
 
-    companion object JsonConverter : Converter<Truth, Boolean?> {
+    operator fun not() : Truth {
+        return when (truthValue.isPresent) {
+            true -> TRUE
+            else -> UNKNOWN
+        }
+    }
+
+    object JsonConverter : Converter<Truth, Boolean?> {
 
         override fun convert(value: Truth?): Boolean? {
             return when (value) {
@@ -62,4 +69,27 @@ class Truth(truth: Boolean?) : BaseType {
         }
 
     }
+
+    companion object {
+        fun valueOf(value: Any?) : Truth {
+            return when (value) {
+                null -> UNKNOWN
+                is Boolean -> when (value) {
+                    true -> TRUE
+                    else -> FALSE
+                }
+                is Truth -> value
+                is String -> when (value) {
+                    "true" -> TRUE
+                    "false" -> FALSE
+                    else -> UNKNOWN
+                }
+                else -> UNKNOWN
+            }
+        }
+    }
+
+    object TRUE : Truth(true)
+    object FALSE : Truth(false)
+    object UNKNOWN : Truth(null)
 }

@@ -9,3 +9,6 @@ typealias int = Numeric
 typealias bool = Truth
 typealias string = Text
 
+typealias TRUE = Truth.TRUE
+typealias FALSE = Truth.FALSE
+typealias UNKNOWN = Truth.UNKNOWN

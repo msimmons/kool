@@ -22,6 +22,7 @@ class AccountAttributes(properties: Map<String, Any?>) : BaseAttribute() {
         val balance : usd by scalarValue(properties)
         val is_new_account: bool by scalarValue(properties)
         val reported_apr : percent by scalarValue(properties)
+        val pay_in_full_each_month : bool by scalarValue(properties)
     }
 
     class TU(properties: Map<String, Any?>) : BaseAttribute() {
