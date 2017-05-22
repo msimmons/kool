@@ -19,7 +19,7 @@ class AccountInputs(context: InputContext) : BaseInput("accounts", context) {
     }
 
     val missing_one by formula {
-        user_profile.accounts.filter { it.type.equals("credit_car") }
+        user_profile.accounts.filter { it.type EQ "credit_car" }
     }
 
     val exception_one by formula {
@@ -37,7 +37,7 @@ class AccountInputs(context: InputContext) : BaseInput("accounts", context) {
     }
 
     val effective_apr by formula {
-        user_profile.accounts.filter { it.type.equals("credit_card") }.map {
+        user_profile.accounts.filter { it.type EQ "credit_card" }.map {
             val require_user_apr = !it.tu.revolving_apr.isNull() && !it.mx.effective_apr.isNull() &&
                 it.tu.revolving_apr - it.mx.effective_apr > 0.05
             if ( require_user_apr ) it.user_input.reported_apr
@@ -49,7 +49,7 @@ class AccountInputs(context: InputContext) : BaseInput("accounts", context) {
     }
 
     val likely_revolver by formula {
-        user_profile.accounts.filter { it.type.equals("credit_card") }.map {
+        user_profile.accounts.filter { it.type EQ "credit_card" }.map {
             val hasBalance = !it.mx.balance.isNull() && it.mx.balance > 0
             if ( hasBalance ) !it.user_input.pay_in_full_each_month
             else FALSE

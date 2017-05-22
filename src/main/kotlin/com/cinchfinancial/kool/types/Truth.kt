@@ -21,6 +21,18 @@ sealed class Truth(truth: Boolean?) : BaseType {
         return !truthValue.isPresent
     }
 
+    fun isTrue() : Boolean {
+        return truthValue.isPresent && truthValue.get()
+    }
+
+    fun isFalse() : Boolean {
+        return truthValue.isPresent && !truthValue.get()
+    }
+
+    fun isUnknown() : Boolean {
+        return !truthValue.isPresent
+    }
+
     override fun equals(other: Any?): Boolean {
         return when(other) {
             null -> !truthValue.isPresent

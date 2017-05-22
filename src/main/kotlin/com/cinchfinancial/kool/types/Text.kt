@@ -44,9 +44,49 @@ class Text(text: String?) : CharSequence, BaseType, Comparable<Text> {
         return if ( textValue.isPresent ) textValue.get().subSequence(startIndex, endIndex) else ""
     }
 
+    infix fun EQ(other: Any?) : Boolean {
+        return equals(other)
+    }
+
+    infix fun GT(other: Any?) : Boolean {
+        return when (other) {
+            null -> false
+            is String -> compareTo(other) > 0
+            is Text -> compareTo(other) > 0
+            else -> false
+        }
+    }
+
+    infix fun GTE(other: Any?) : Boolean {
+        return when (other) {
+            null -> false
+            is String -> if (isNull()) false else compareTo(other) >= 0
+            is Text -> if (isNull()) false else compareTo(other) >= 0
+            else -> false
+        }
+    }
+
+    infix fun LT(other: Any?) : Boolean {
+        return when (other) {
+            null -> false
+            is String -> compareTo(other) < 0
+            is Text -> compareTo(other) < 0
+            else -> false
+        }
+    }
+
+    infix fun LTE(other: Any?) : Boolean {
+        return when (other) {
+            null -> false
+            is String -> if (isNull()) false else compareTo(other) <= 0
+            is Text -> if (isNull()) false else compareTo(other) <= 0
+            else -> false
+        }
+    }
+
     override fun equals(other: Any?): Boolean {
         return when(other) {
-            null -> !textValue.isPresent
+            null -> isNull()
             is Text -> equals(other)
             is String -> equals(other)
             else -> false
